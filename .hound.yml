@@ -1,0 +1,7 @@
+scss:
+  config_file: .scss-lint.yml
+ruby:
+  config_file: .rubocop.yml
+javascript:
+  config_file: .javascript-style.json
+  ignore_file: .javascript-ignore
