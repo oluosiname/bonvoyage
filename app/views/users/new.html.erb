@@ -1,0 +1,55 @@
+<%= render partial: 'header' %>
+<div class="main-bg">
+  <div class="container sign-up-container">
+    <div class="sign-up-header">
+      <div class="row">
+        <div class="col s12 right">
+          <span>SIGN UP</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <span>GOOGLE</span>
+        </div>
+        <div class="col s6">
+          <span>FACEBOOK</span>
+        </div>
+      </div>
+    </div>
+    <div class="sign-up-box">
+      <%= form_for (@user) do |f| %>
+          <div class="row">
+            <div class="col s8">
+              <span class="label-font">Username</span>
+              <%= f.text_field :username, class: "username-field" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s8">
+              <span class="label-font">Email</span>
+              <%= f.email_field :email, class: "username-field" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s8">
+              <span class="label-font">Password</span>
+              <%= f.password_field :password, class: "username-field", id: "password" %>
+              <div class="col s12">
+              <img src= "../../../../bonvoyage/app/assets/images/pp2.jpg" id="show_password"/> <span class="label-font">show password</span>
+            </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s8">
+            <%= f.submit "Sign Up", class: "sign-up-button"%>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s8">
+            <span class="label-font"> Already got an account? <%= link_to "Sign In", login_users_path %> </span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
