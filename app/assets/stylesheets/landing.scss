@@ -1,0 +1,64 @@
+@import "application";
+
+.my-header {
+  background-color: $my-black;
+  height: 3.5em;
+  position: fixed;
+  width: 100%;
+}
+
+.header-menu {
+  color: $my-white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9em;
+  font-weight: 400;
+
+  ul li {
+    color: $my-white;
+    display: inline;
+    padding-left: 1em;
+    padding-right: 2em;
+    text-decoration: none;
+  }
+
+}
+
+.main-bg {
+  background: image-url("bg6.jpg");
+  background-size: 100%;
+  color: $my-black;
+  height: 50.5em;
+  width: 100%;
+}
+
+.my-container {
+  background-color: $my-brown;
+  border: 2px;
+  border-radius: 10px;
+  font-family: "Open Sans", sans-serif;
+  opacity: 0.7;
+  padding: 1em;
+  position: relative;
+  top: 8em;
+}
+
+.my-small-font {
+  color: $my-gray;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8em;
+}
+.my-big-font {
+  color: $my-gray;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.7em;
+}
+
+.date-picker {
+  background-color: $my-white !important;
+  border-radius: 0.5em !important;
+  color: $my-black;
+  padding-left: 0.7em !important;
+
+}
+
+

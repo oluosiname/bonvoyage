@@ -1,0 +1,46 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+@import "materialize";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+$my-gray: #b2b6B7;
+$my-brown: #384145;
+$my-green: #338574;
+$my-white: #ffffff;
+$my-orange: #ffcb00;
+$my-black: #160f09;
+$my-deep-yellow: #b89300;
+$grey-border: #efefef;
+$bottom-border: #e8e8e8;
+$section-color: #333;
+$section-title-size: 600;
+$section-text-size: 400;
+$section-button-size: 500;
+$button-background: #338574;
+$button-border: #33842a;
+$button-color: #f3f3f3;
+$section-font: 'ProximaNova', sans-serif, Arial;
+$shadow-color: rgba(0, 0, 0, 0.75);
+
+$facebook-blue: #3b5998;
+$twitter-blue: #4099ff;
+$instagram-red: #3f729b;
+$pinterest-red: #c92228;
+
