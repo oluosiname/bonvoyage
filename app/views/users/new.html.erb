@@ -1,47 +1,44 @@
 <%= render partial: 'header' %>
 <div class="main-bg">
-  <div class="container sign-up-container">
-    <div class="sign-up-header">
-      <div class="row">
-        <div class="col s12 right">
-          <span>SIGN UP</span>
+   <div class="container sign-up-container">
+    <h5 class="center">Sign Up </h5>
+      <% unless flash["errors"].nil? %>
+        <div class ="row center">
+          <% flash["errors"].each do |error| %>
+            <span class="big-error"> <%= error %></span>
+          <% end %>
         </div>
-      </div>
-      <div class="row">
-        <div class="col s6">
-          <span>GOOGLE</span>
-        </div>
-        <div class="col s6">
-          <span>FACEBOOK</span>
-        </div>
-      </div>
-    </div>
-    <div class="sign-up-box">
+      <% end %>
+
       <%= form_for (@user) do |f| %>
           <div class="row">
-            <div class="col s8">
+            <div class="col s12">
               <span class="label-font">Username</span>
-              <%= f.text_field :username, class: "username-field" %>
+              <span class="small-error right" id="password-error"></span>
+              <%= f.text_field :username, class: "input-field" %>
             </div>
           </div>
           <div class="row">
-            <div class="col s8">
+            <div class="col s12">
               <span class="label-font">Email</span>
-              <%= f.email_field :email, class: "username-field" %>
+              <span class="small-error" id="email-error"></span>
+              <%= f.email_field :email, class: "input-field" %>
             </div>
           </div>
           <div class="row">
-            <div class="col s8">
+            <div class="col s12">
               <span class="label-font">Password</span>
-              <%= f.password_field :password, class: "username-field", id: "password" %>
-              <div class="col s12">
-              <img src= "../../../../bonvoyage/app/assets/images/pp2.jpg" id="show_password"/> <span class="label-font">show password</span>
+              <span class="small-error" id="password-error"></span>
+              <%= f.password_field :password, class: "input-field", id: "password" %>
+              <div class="col s12 forgot-password">
+              <input type="checkbox" id="show-password" />
+              <label for="show-password" title="show password" class="label-font">show password</label>
             </div>
             </div>
           </div>
           <div class="row">
-            <div class="col s8">
-            <%= f.submit "Sign Up", class: "sign-up-button"%>
+            <div class="col s12">
+            <%= f.submit "Sign Up", class: "sign-up-button", id: "submit-signup", disabled: "disabled" %>
             </div>
           </div>
           <div class="row">
@@ -50,6 +47,5 @@
           </div>
         </div>
       <% end %>
-    </div>
   </div>
 </div>
