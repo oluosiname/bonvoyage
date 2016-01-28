@@ -1,0 +1,22 @@
+<%= render partial: 'header' %>
+<div class="container box">
+  <% @flights.each do |flight| %>
+  <div class="row">
+    <div class="col s3">
+      <span> <%= flight.departure.name%></span>
+    </div>
+    <div class="col s3">
+    <span> <%= flight.arrival.name%> </span>
+    </div>
+     <div class="col s2">
+    <span> <%= flight.departure_date%> </span>
+    </div>
+     <div class="col s2">
+    <span> <%= flight.airline%> </span>
+    </div>
+     <div class="col s1">
+    <span> <%= flight.duration%>hrs </span>
+    </div>
+  </div>
+  <% end %>
+</div>
