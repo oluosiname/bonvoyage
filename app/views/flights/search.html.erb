@@ -7,9 +7,9 @@
           <div class="col s10">
             <span class="my-small-font">Departure</span>
             <select class="browser-default">
-              <option> Adamingba Airport </option>
-              <option> Lagos Airport </option>
-              <option> KoronaAirport </option>
+            <% @airport.each do |airport| %>
+              <option> <%= airport.name << " " << airport.location %> </option>
+            <% end %>
               </select>
           </div>
         </div>
@@ -19,9 +19,9 @@
           <div class="col s10">
             <span class="my-small-font">Arrival</span>
             <select class="browser-default">
-              <option> Adamingba Airport </option>
-              <option> Lagos Airport </option>
-              <option> KoronaAirport </option>
+            <% @airport.each do |airport| %>
+              <option> <%= airport.name << " " << airport.location %> </option>
+            <% end %>
               </select>
           </div>
         </div>
