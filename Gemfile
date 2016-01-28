@@ -62,3 +62,7 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background.
 end
+
+group :production do
+  gem "pg"
+end
