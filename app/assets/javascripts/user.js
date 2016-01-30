@@ -1,4 +1,16 @@
 $(document).ready(function() {
+
+  function previousNext() {
+    if ($("#currentPage").val() == "1") {
+      $("#previous").hide();
+    }
+    if ($("#currentPage").val() == $("#lastPage").val()) {
+      $("#next").hide();
+    }
+  }
+
+  previousNext();
+
   var userNameState = false,
       emailState = false,
       passwordState = false;
@@ -64,5 +76,7 @@ $(document).ready(function() {
       $("#password").attr("type","password");
     }
   });
+
+
 
 });
