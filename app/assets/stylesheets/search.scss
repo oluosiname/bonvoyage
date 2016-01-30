@@ -1,22 +1,27 @@
 @import "application";
 
+.search-bg {
+  background-color: $light-blue;
+  height: 100%;
+}
 
 .my-header {
-  background-color: $my-black;
-  height: 3.5em;
+  background: linear-gradient($my-white, $light-gray);
+  border-bottom: 2px solid $medium-gray;
+  height: 4.5em;
+  line-height: 3.0em;
   position: fixed;
   width: 100%;
   z-index: 2;
 }
 
 .header-menu {
-  color: $my-white;
   font-family: "Open Sans", sans-serif;
   font-size: 0.9em;
   font-weight: 400;
 
   ul li {
-    color: $my-white;
+    color: $light-blue-text;
     display: inline;
     padding-left: 1em;
     padding-right: 2em;
@@ -58,20 +63,23 @@
 .date-picker {
   background-color: $my-white !important;
   border-radius: 0.5em !important;
-  color: $my-black;
-  padding-left: 0.7em !important;
+  color: $my-black !important;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  font-size: 0.9em !important;
+  height: 2.5em !important;
+  padding-left: 0.4em !important;
+  width: 9.7em !important;
 }
-
 .page-number {
   display: inline;
   ul li {
-    color: $my-black;
     display: inline;
+    color: $my-black;
   }
 
   a {
-    border: 1px solid $my-gray;
     color: $my-black;
+    border: 1px solid $my-gray;
     display: in-line;
     padding-left: 0.4em;
     padding-right: 0.4em;
@@ -80,7 +88,6 @@
       background-color: $my-black;
       color: $my-white;
     }
-
     &:active {
       background-color: $my-black;
       color: $my-white;
@@ -90,23 +97,55 @@
 }
 
 .my-flight {
-  border-bottom: 1px solid $my-gray;
+  border: 1px solid $light-gray;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 0.85em;
-  height: 4em;
-  padding: 0;
+  vertical-align: center;
+  p{
+    text-align: center;
+  }
 }
-
 .all-flight {
   color: $my-black;
   font-size: 1em;
   font-weight: bold;
+  text-align: center;
 
 }
-
 .box {
-  border-radius: 10px;
-  padding-left: 1em;
+  background-color: $my-white;
+  border-radius: 4px;
+  padding:  1em;
   position: relative;
+  width: 90% !important;
   top: 6em;
-  width: 100% !important;
 }
+
+.header-text {
+  color: $my-black;
+  font-weight: bolder;
+}
+
+.select-box {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 0.9em;
+  height: 2.5em;
+  width: 20em;
+}
+
+.input-passenger {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 0.9em;
+  height: 2.5em;
+  width: 5em;
+
+}
+
+.field-error {
+  color: $my-white;
+  font-size: 2em;
+}
+
+
+
+

@@ -1,6 +1,6 @@
 class RenameEncryptionColumnAndDeleteSaltColumn < ActiveRecord::Migration
   def change
-     rename_column :users, :encrypted_password, :password_digest
-     remove_column :users, :salt
+    rename_column :users, :encrypted_password, :password_digest
+    remove_column :users, :salt
   end
 end

@@ -1,4 +1,4 @@
 FactoryGirl.define do
-  factory :flight do
+  factory :booking do
   end
 end
