@@ -6,6 +6,7 @@
   height: 3.5em;
   position: fixed;
   width: 100%;
+  z-index: 2;
 }
 
 .header-menu {
@@ -59,7 +60,53 @@
   border-radius: 0.5em !important;
   color: $my-black;
   padding-left: 0.7em !important;
+}
+
+.page-number {
+  display: inline;
+  ul li {
+    color: $my-black;
+    display: inline;
+  }
+
+  a {
+    border: 1px solid $my-gray;
+    color: $my-black;
+    display: in-line;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    text-decoration: none;
+    &:hover {
+      background-color: $my-black;
+      color: $my-white;
+    }
+
+    &:active {
+      background-color: $my-black;
+      color: $my-white;
+    }
+
+  }
+}
+
+.my-flight {
+  border-bottom: 1px solid $my-gray;
+  font-size: 0.85em;
+  height: 4em;
+  padding: 0;
+}
+
+.all-flight {
+  color: $my-black;
+  font-size: 1em;
+  font-weight: bold;
 
 }
 
-
+.box {
+  border-radius: 10px;
+  padding-left: 1em;
+  position: relative;
+  top: 6em;
+  width: 100% !important;
+}
