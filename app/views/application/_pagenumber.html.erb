@@ -1,0 +1,11 @@
+<div class="page-number center">
+<%= hidden_field_tag :currentPage, @current_page %>
+<%= hidden_field_tag :lastPage, @pages %>
+  <ul>
+  <li id="previous"><%= link_to all_flights_path(:page => (@current_page.to_i - 1)) do %>Previous<% end %></li>
+  <% for i in (1..@pages) do  %>
+     <li><%= link_to all_flights_path(:page => i) do %><%= i %> <% end %></li>
+  <% end %>
+  <li id="next" ><%= link_to all_flights_path(:page => (@current_page.to_i + 1)) do %>Next<% end %></li>
+  </ul>
+</div>

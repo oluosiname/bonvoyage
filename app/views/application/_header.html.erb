@@ -1,7 +1,7 @@
 <div class="my-header">
   <div class="header-menu left">
     <ul>
-      <%=link_to all_flights_path do %> <li>All Flights</li> <% end %>
+      <%=link_to all_flights_path(:page => 1) do %> <li>All Flights</li> <% end %>
       <%=link_to root_path do %><li>Search</li> <% end %>
       <% unless logged_in? %>
         <%=link_to login_path do %><li> Sign In </li><% end %>
