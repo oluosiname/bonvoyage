@@ -1,0 +1,19 @@
+@import "application";
+
+.thick-border {
+  border: 3px solid $my-gray;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 1.5em;
+}
+
+.thin-wrap {
+   border: 1px solid $my-gray;
+   height: 6em;
+}
+
+.bold-text {
+  color: $my-black;
+  font-size: 0.9em;
+  font-weight: bold;
+}

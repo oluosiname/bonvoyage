@@ -1,0 +1,45 @@
+<%= render partial: 'header' %>
+<div class="container box">
+  <div class="row">
+    <div class="col s6">
+      <div class="row">
+      <%= render partial: 'flightinfo' %>
+      </div>
+    </div>
+    <div class="col s6">
+      <div class="row">
+      <%= form_for @booking do |f| %>
+      <%= f.hidden_field :user_id, :value => @user %>
+      <%= f.hidden_field :flight_id, :value => @flight.id %>
+      <%= f.hidden_field :payment_status, :value => false %>
+      <%= f.hidden_field :seats, :value => @passengers %>
+        <div class="col 10" id="passengers">
+          <%= f.fields_for :passengers do |passengers_form| %>
+            <div class="col s6">
+              <%= passengers_form.label :first_name, "Firstname" %>
+              <%= passengers_form.text_field :first_name %>
+            </div>
+            <div class="col s6">
+              <%= passengers_form.label :last_name, "Lastname" %>
+              <%= passengers_form.text_field :last_name %>
+            </div>
+            <div class="col s6">
+              <%= passengers_form.label :email, "Email" %>
+              <%= passengers_form.email_field :email %>
+            </div>
+            <div class="col s3">
+              <%= passengers_form.label :phone, "Phone No" %>
+              <%= passengers_form.text_field :phone %>
+            </div>
+            <div class="col s3">
+              <%= passengers_form.label :cabin, "Cabin Class" %>
+              <%= passengers_form.select(:cabin, ["Economy", "Business", "First"], {}, { :class => 'browser-default' }) %>
+            </div>
+          <% end %>
+        </div>
+        <div class="row"> <%= f.submit "Book", class: "btn black"%></div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

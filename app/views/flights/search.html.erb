@@ -1,55 +1,48 @@
 <%= render partial: 'header' %>
 <div class="main-bg">
   <div class="container my-container">
+  <% unless flash['notice'].blank?  %>
+      <div class="row center">
+        <span class="field-error"> <%= flash['notice'] %> </span>
+         </div>
+    <% end %>
+
     <div class="row">
-      <div class="col s6">
-        <div class="row">
-          <div class="col s10">
-            <span class="my-small-font">Departure</span>
-            <select class="browser-default">
-            <% @airport.each do |airport| %>
-              <option> <%= airport.name << " " << airport.location %> </option>
-            <% end %>
-              </select>
-          </div>
-        </div>
+      <div class="col s4">
+        <%= form_tag %>
+        <span class="my-small-font">Departure</span>
+        <select name="departure_id" class="browser-default select-box">
+          <% Airport.all.order("name ASC").each do |airport| %>
+            <option value="<%= airport.id %>"> <%= airport.name << " " << airport.location %> </option>
+          <% end %>
+        </select>
       </div>
-      <div class="col s6">
-        <div class="row">
-          <div class="col s10">
-            <span class="my-small-font">Arrival</span>
-            <select class="browser-default">
-            <% @airport.each do |airport| %>
-              <option> <%= airport.name << " " << airport.location %> </option>
-            <% end %>
-              </select>
-          </div>
-        </div>
+      <div class="col s4">
+        <span class="my-small-font">Arrival</span>
+        <select name="arrival_id" class="browser-default select-box">
+          <% Airport.all.order("name ASC").each do |airport| %>
+            <option value="<%= airport.id %>"> <%= airport.name << " " << airport.location %> </option>
+          <% end %>
+        </select>
+      </div>
+      <div class="col s2">
+        <span class="my-small-font">Departure Date</span>
+        <input id="departure_date" name="date" type="date" class="date-picker"/>
+      </div>
+      <div class="col s1">
+        <span class="my-small-font">Passengers</span>
+        <select name="seats" class="browser-default input-passenger">
+          <% for i in (1..10) do i %>
+            <option> <%= i %> </option>
+          <% end %>
+        </select>
       </div>
     </div>
     <div class="row">
       <div class="col s6">
-        <div class="row">
-          <div class="col s4">
-            <span class="my-small-font">No of Passengers</span>
-            <select class="browser-default">
-              <% for i in (0..10) do i %>
-                <option> <%= i %> </option>
-              <% end %>
-            </select>
-          </div>
-          <div class="col s6">
-          <span class="my-small-font">Departure Date</span>
-          <input id="departure_date" name=" departure" type="date" class="date-picker"/>
-          </div>
-        </div>
+      <%= submit_tag "Search", class: "btn black", id: "submit-signup" %>
       </div>
     </div>
-    <div class="row">
-      <div class="col s6">
-      <%= button_tag "Search", class: "btn black", id: "submit-signup" %>
-      </div>
-    </div>
-  </div>
+</div>
 </div>
 

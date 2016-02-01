@@ -1,0 +1,57 @@
+<%= render partial: 'header' %>
+<div class="main-bg">
+  <div class="container my-container">
+    <div class="row">
+      <div class="col s6">
+        <div class="row">
+          <div class="col s10">
+
+            <span class="my-small-font">Departure</span>
+            <select name="departure_id" class="browser-default">
+            <% Airport.all.order("name ASC").each do |airport| %>
+              <option value="<%= airport.id %>"> <%= airport.name << " " << airport.location %> </option>
+            <% end %>
+              </select>
+          </div>
+        </div>
+      </div>
+      <div class="col s6">
+        <div class="row">
+          <div class="col s10">
+            <span class="my-small-font">Arrival</span>
+            <select name="arrival_id" class="browser-default">
+            <% Airport.all.order("name ASC").each do |airport| %>
+              <option value="<%= airport.id %>"> <%= airport.name << " " << airport.location %> </option>
+            <% end %>
+              </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <div class="row">
+          <div class="col s4">
+            <span class="my-small-font">No of Passengers</span>
+            <select class="browser-default">
+              <% for i in (0..10) do i %>
+                <option> <%= i %> </option>
+              <% end %>
+            </select>
+          </div>
+          <div class="col s6">
+          <span class="my-small-font">Departure Date</span>
+          <input id="departure_date" name=" departure" type="date" class="date-picker"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+      <%= form_tag %>
+      <%= submit_tag "Search", class: "btn black", id: "submit-signup" %>
+      </div>
+    </div>
+  </div>
+</div>
+
