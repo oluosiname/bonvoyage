@@ -12,7 +12,7 @@
       <%= f.hidden_field :user_id, :value => @user %>
       <%= f.hidden_field :flight_id, :value => @flight.id %>
       <%= f.hidden_field :payment_status, :value => false %>
-      <%= f.hidden_field :seats, :value => @passengers %>
+      <%= f.hidden_field :seats, :value => @seats %>
         <div class="col 10" id="passengers">
           <%= f.fields_for :passengers do |passengers_form| %>
             <div class="col s6">

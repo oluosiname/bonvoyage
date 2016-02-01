@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130101727) do
+ActiveRecord::Schema.define(version: 20160201161904) do
 
   create_table "airports", force: :cascade do |t|
     t.string   "name"
@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 20160130101727) do
     t.integer  "seats"
     t.integer  "flight_id"
     t.string   "user_id"
-    t.integer  "cost"
+    t.decimal  "cost",           precision: 8, scale: 2
     t.boolean  "payment_status"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "ref"
   end
 
@@ -35,16 +35,16 @@ ActiveRecord::Schema.define(version: 20160130101727) do
     t.integer  "amount"
     t.integer  "departure_id"
     t.integer  "arrival_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.date     "departure_date"
     t.string   "departure_time"
     t.string   "flight_number"
     t.string   "duration"
     t.string   "airline"
-    t.integer  "economy"
-    t.integer  "business"
-    t.integer  "first"
+    t.decimal  "economy",        precision: 8, scale: 2
+    t.decimal  "business",       precision: 8, scale: 2
+    t.decimal  "first",          precision: 8, scale: 2
   end
 
   create_table "passengers", force: :cascade do |t|
@@ -53,9 +53,10 @@ ActiveRecord::Schema.define(version: 20160130101727) do
     t.string   "phone"
     t.string   "email"
     t.integer  "booking_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "cabin"
+    t.decimal  "cost",       precision: 8, scale: 2
   end
 
   create_table "users", force: :cascade do |t|
