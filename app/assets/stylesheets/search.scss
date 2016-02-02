@@ -105,6 +105,15 @@
     text-align: center;
   }
 }
+.passenger {
+  border-bottom: 1px solid $light-gray;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 0.85em;
+  vertical-align: center;
+  p{
+    text-align: center;
+  }
+}
 .all-flight {
   color: $my-black;
   font-size: 1em;

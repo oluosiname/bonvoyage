@@ -37,6 +37,7 @@ Rails.application.routes.draw do
       get "new", to: "bookings#make_new"
       post "new", to: "bookings#make"
       get "confirm", to: "bookings#confirm"
+      get "success", to: "bookings#success"
       post "confirm", to: "bookings#add"
     end
   end

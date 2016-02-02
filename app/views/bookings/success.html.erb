@@ -1,0 +1,13 @@
+<%= render partial: 'header' %>
+<div class="container box">
+  <div class="row">Flight successfully booked</div>
+  <div class="row">Booking Details</div>
+  <div class="row">
+    <div class="col s2"> <%= @booking.ref %> </div>
+    <div class="col s2"> <%= @booking.seats %> </div>
+    <div class="col s2"> <%= @booking.cost %> </div>
+    <div class="col s2"> <%= @booking.flight.airline %> </div>
+    <div class="col s2"> <%= @booking.flight.id %> </div>
+
+  </div>
+</div>

@@ -7,8 +7,8 @@ class Booking < ActiveRecord::Base
   before_create :set_ref
 
   def set_ref
-    ref = (0..9).to_a.sample(8).join
-    set_ref if Booking.find_by_ref(ref)
-    ref
+    self.ref = (0..9).to_a.sample(8).join
+    set_ref if Booking.find_by_ref(self.ref)
+    self.ref
   end
 end

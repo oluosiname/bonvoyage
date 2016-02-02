@@ -28,12 +28,10 @@ gem "sdoc", "~> 0.4.0", group: :doc
 
 gem "rspec-rails"
 gem "faker"
-gem "omniauth"
-gem "omniauth-facebook"
-gem "omniauth-twitter"
-gem "omniauth-google-oauth2"
+gem "codeclimate-test-reporter", group: :test
 
 gem "bcrypt", "~> 3.1.7"
+gem "paypal-express"
 
 # Use Unicorn as the app server
 # gem "unicorn"
@@ -62,4 +60,5 @@ end
 group :production do
   gem "pg"
   gem "rails_12factor", "0.0.2"
+  gem "activemerchant"
 end

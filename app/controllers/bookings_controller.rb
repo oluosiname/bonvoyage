@@ -9,22 +9,25 @@ class BookingsController < ApplicationController
   end
 
   def make
-    session[:booking] = bookings_params
+    booking = Booking.new(bookings_params)
+    booking.cost = get_cost(booking)
+    booking.save
+    session[:booking] = booking.id
     redirect_to confirm_bookings_path
   end
 
   def confirm
-    @current_booking = session[:booking]
-    @passengers = @current_booking["passengers_attributes"]
-    @current_booking["cost"] = get_cost(@current_booking)
-    @flight = Flight.find_by_id(@current_booking["flight_id"])
-    @seats = @current_booking["seats"]
+    @booking = Booking.find_by_id(session[:booking])
+    @passengers = @booking.passengers
+    @flight = @booking.flight
+    @seats =  @booking.seats
   end
 
-  def add
-    @booking = Booking.new(session[:booking])
-    @booking.save
-    redirect_to root_path
+  def success
+    @booking = Booking.find_by_id(params[:id])
+    @booking.update_attributes payment_status: true
+    @flight = @booking.flight
+    @passengers = @booking.passengers
   end
 
   def bookings_params
