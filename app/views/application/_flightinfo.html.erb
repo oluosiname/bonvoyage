@@ -1,18 +1,35 @@
-<div class="col s8">
+<div class="col-sm-8">
   <div class="thick-border">
-    <div class="row center"><span> Flight Information </span></div>
-    <p><span class="bold-text">Flight Number:</span><span class="right"><%= @flight.id %></span></p>
-    <p><span class="bold-text">Airline:</span><span class="right"><%= @flight.airline %></span></p>
-    <p><span class="bold-text">From:  </span><span class="right"><%= @flight.departure.name %></span></p>
-    <p><span class="bold-text">To:</span><span class="right"><%= @flight.arrival.name %></span></p>
-    <p><span class="bold-text">Date:  </span><span class="right"><%= @flight.departure_date %></span></p>
-    <p><span class="bold-text">Take-off:  </span><span class="right"><%= @flight.departure_time %></span></p>
-    <p><span class="bold-text">Economy:</span><span class="right">&#x20A6;<%= @flight.economy %></span></p>
-    <p><span class="bold-text">Business:  </span><span class="right">&#x20A6;<%= @flight.business %></span></p>
-    <p><span class="bold-text">First:  </span><span class="right">&#x20A6;<%= @flight.first %></span></p>
-    <p><span class="bold-text">No of passengers</span><span class="right"><%= @seats %></span></p>
+    <div class="row flight-details-header"><span> Flight Information </span></div>
+    <div class="row flight-details">
+      <span class="pull-left">Flight Number:</span><span class="pull-right"><%= @flight.id %></span>
+    </div>
+    <div class="row flight-details">
+      <span class="pull-left">Airline:</span><span class="pull-right"><%= @flight.airline %></span>
+    </div>
+    <div class="row flight-details">
+      <span class="pull-left">From:  </span><span class="pull-right"><%= @flight.departure.name %></span>
+    </div>
+    <div class="row flight-details">
+      <span class="pull-left">To:</span><span class="pull-right"><%= @flight.arrival.name %></span>
+    </div>
+    <div class="row flight-details">
+      <span class="pull-left">Date:  </span><span class="pull-right"><%= @flight.departure_date %></span>
+    </div>
+    <div class="row flight-details">
+      <span class="pull-left">Take-off:  </span><span class="pull-right"><%= @flight.departure_time %></span>
+    </div>
+    <div class="row flight-details">
+      <span class="pull-left">Economy class:</span><span class="pull-right">&#x20A6;<%= @flight.economy %></span>
+    </div>
+    <div class="row flight-details">
+      <span class="pull-left">Business class:  </span><span class="pull-right">&#x20A6;<%= @flight.business %></span>
+    </div>
+    <div class="row flight-details">
+      <span class="pull-left">First class:  </span><span class="pull-right">&#x20A6;<%= @flight.first %></span>
+    </div>
+    <div class="row flight-details">
+      <span class="pull-left">No of passengers</span><span class="pull-right"><%= @seats %></span>
+    </div>
   </div>
-</div>
-<div class="col s4">
-
 </div>

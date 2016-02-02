@@ -56,9 +56,9 @@ def set_route(airports_id)
 end
 
 def set(airports_id, airlines)
-  economy = rand(10..20) * 10
-  business = rand(30..40) * 10
-  first =  rand(50..100) * 10
+  economy = rand(10..50) * 1000
+  business = rand(51..100) * 1000
+  first =  rand(101..200) * 1000
   airline = airlines.sample
   { airline: airline, departure_date: set_time[0], departure_time: set_time[1],
     duration: set_time[2], economy: economy, business: business, first: first,

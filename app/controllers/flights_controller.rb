@@ -1,13 +1,15 @@
 class FlightsController < ApplicationController
-  def search
-  end
-
   def result
     @seats = params[:seats]
-    @flights = Flight.where("departure_id = ? AND departure_date = ? AND arrival_id = ?", params[:departure_id], params[:date], params[:arrival_id])
-    redirect_to root_path unless @flights.length > 0
-    flash[:notice] = "No Flights Available"
 
+    if params[:date] == ""
+      @flights = Flight.by_route(params[:departure_id], params[:arrival_id])
+    else
+      @flights = Flight.by_route(
+        params[:departure_id], params[:arrival_id]).by_date(params[:date])
+    end
+    redirect_to root_path unless @flights.length > 0
+    flash[:notice] = "No Flights Available For That Search"
   end
 
   def all
@@ -15,5 +17,8 @@ class FlightsController < ApplicationController
     @pages = Flight.all.length / 10
     @flights = Flight.offset(10 * (params[:page].to_i - 1)).
                limit(10).order("departure_date ASC")
+  end
+
+  def search
   end
 end

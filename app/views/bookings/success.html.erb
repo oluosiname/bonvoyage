@@ -1,13 +1,39 @@
 <%= render partial: 'header' %>
-<div class="container box">
-  <div class="row">Flight successfully booked</div>
-  <div class="row">Booking Details</div>
-  <div class="row">
-    <div class="col s2"> <%= @booking.ref %> </div>
-    <div class="col s2"> <%= @booking.seats %> </div>
-    <div class="col s2"> <%= @booking.cost %> </div>
-    <div class="col s2"> <%= @booking.flight.airline %> </div>
-    <div class="col s2"> <%= @booking.flight.id %> </div>
-
+<div class="container success-box">
+  <div align="center">
+    <div class="alert alert-success success-booking" role="alert">Flight successfully booked</div>
   </div>
+  <div class="row align="center" ">Booking Details</div>
+  <div class="row confirm-head">
+    <div class="col-sm-3">Ref</div>
+    <div class="col-sm-3">Airline</div>
+    <div class="col-sm-2">Flight Number</div>
+    <div class="col-sm-2">Seats</div>
+    <div class="col-sm-2">Total Cost</div>
+  </div>
+  <div class="row div-pad">
+    <div class="col-sm-3"> <%= @booking.ref %> </div>
+    <div class="col-sm-3"> <%= @booking.flight.airline %> </div>
+    <div class="col-sm-2"> <%= @booking.flight.id %> </div>
+    <div class="col-sm-2"> <%= @booking.seats %> </div>
+    <div class="col-sm-2"> $<%= @booking.cost %> </div>
+  </div>
+
+  <div class="row div-pad">Passenger Details</div>
+  <div class="row confirm-head">
+    <div class="col-sm-3">First Name</div>
+    <div class="col-sm-3">Last Name</div>
+    <div class="col-sm-2">Seat Number</div>
+    <div class="col-sm-2">Cabin</div>
+    <div class="col-sm-2">Cost</div>
+  </div>
+  <% @booking.passengers.each do |passenger| %>
+  <div class="row passenger-fields">
+    <div class="col-sm-3"> <%= passenger.first_name %> </div>
+    <div class="col-sm-3"> <%= passenger.last_name %> </div>
+    <div class="col-sm-2"> <%= passenger.cabin %> </div>
+    <div class="col-sm-2"> <%= passenger.cabin %> </div>
+    <div class="col-sm-2"> $<%= passenger.cost %> </div>
+  </div>
+  <% end %>
 </div>

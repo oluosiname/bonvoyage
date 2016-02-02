@@ -1,33 +1,41 @@
 @import "application";
 
-.search-bg {
-  background-color: $light-blue;
-  height: 100%;
-}
-
 .my-header {
-  background: linear-gradient($my-white, $light-gray);
-  border-bottom: 2px solid $medium-gray;
-  height: 4.5em;
-  line-height: 3.0em;
+  background-color: $my-white;
+  border-bottom: 3px solid $medium-blue;
+  height: 3.4em;
+  line-height: 3em;
   position: fixed;
   width: 100%;
   z-index: 2;
 }
 
 .header-menu {
-  font-family: "Open Sans", sans-serif;
-  font-size: 0.9em;
+  font-family: $head-text;
+  font-size: 1em;
   font-weight: 400;
+  z-index: 2;
 
   ul li {
-    color: $light-blue-text;
+    color: $my-black;
     display: inline;
     padding-left: 1em;
     padding-right: 2em;
     text-decoration: none;
   }
 
+  a {
+    color: $my-black;
+    text-decoration: none;
+
+    &:hover {
+      color: $medium-blue;
+    }
+
+    &:active {
+      color: $my-white;
+    }
+  }
 }
 
 .main-bg {
@@ -42,8 +50,7 @@
   background-color: $my-brown;
   border: 2px;
   border-radius: 10px;
-  font-family: "Open Sans", sans-serif;
-  opacity: 0.7;
+  font-family: $open-sans;
   padding: 1em;
   position: relative;
   top: 8em;
@@ -51,12 +58,13 @@
 
 .my-small-font {
   color: $my-gray;
-  font-family: "Open Sans", sans-serif;
+  font-family: $open-sans;
   font-size: 0.8em;
 }
+
 .my-big-font {
   color: $my-gray;
-  font-family: "Open Sans", sans-serif;
+  font-family: $open-sans;
   font-size: 1.7em;
 }
 
@@ -64,30 +72,33 @@
   background-color: $my-white !important;
   border-radius: 0.5em !important;
   color: $my-black !important;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  font-family: $helvetica !important;
   font-size: 0.9em !important;
   height: 2.5em !important;
   padding-left: 0.4em !important;
-  width: 9.7em !important;
 }
+
 .page-number {
   display: inline;
+
   ul li {
-    display: inline;
     color: $my-black;
+    display: inline;
   }
 
   a {
-    color: $my-black;
     border: 1px solid $my-gray;
+    color: $my-black;
     display: in-line;
     padding-left: 0.4em;
     padding-right: 0.4em;
     text-decoration: none;
+
     &:hover {
       background-color: $my-black;
       color: $my-white;
     }
+
     &:active {
       background-color: $my-black;
       color: $my-white;
@@ -98,36 +109,45 @@
 
 .my-flight {
   border: 1px solid $light-gray;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: $helvetica;
   font-size: 0.85em;
-  vertical-align: center;
-  p{
+  height: 10em;
+  padding-top: 3.5em;
+
+  p {
     text-align: center;
   }
 }
+
 .passenger {
   border-bottom: 1px solid $light-gray;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: $helvetica;
   font-size: 0.85em;
   vertical-align: center;
-  p{
+
+  p {
     text-align: center;
   }
 }
+
 .all-flight {
-  color: $my-black;
+  background-color: $deep-blue;
+  border-radius: 5px 5px 0 0;
+  color: $my-white;
   font-size: 1em;
-  font-weight: bold;
+  height: 2.8em;
+  line-height: 2.8em;
   text-align: center;
 
 }
+
 .box {
   background-color: $my-white;
   border-radius: 4px;
-  padding:  1em;
+  padding: 1em;
   position: relative;
-  width: 90% !important;
   top: 6em;
+  width: 80% !important;
 }
 
 .header-text {
@@ -135,25 +155,40 @@
   font-weight: bolder;
 }
 
-.select-box {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 0.9em;
-  height: 2.5em;
-  width: 20em;
-}
-
 .input-passenger {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: $helvetica;
   font-size: 0.9em;
   height: 2.5em;
   width: 5em;
-
 }
 
-.field-error {
+.search-error {
+  vertical-align: center;
+  text-align: center;
+  width: 85%;
+}
+
+.search-div {
+  border: 1px solid $light-gray;
+  border-radius: 10px;
+  height: auto;
+  margin-left: 0;
+  margin-right: 0;
+  width: 85%;
+}
+
+.search-head {
+  background-color: $deep-blue;
+  border-radius: 5px 5px 0 0;
   color: $my-white;
-  font-size: 2em;
+  font-size: 1em;
+  height: 2.8em;
+  line-height: 2.8em;
+  padding-left: 1.2em;
+  text-align: left;
+  width: 100%;
 }
+
 
 
 

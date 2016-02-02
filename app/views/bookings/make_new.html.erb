@@ -1,45 +1,43 @@
 <%= render partial: 'header' %>
 <div class="container box">
   <div class="row">
-    <div class="col s6">
+    <div class="col-sm-6">
       <div class="row">
       <%= render partial: 'flightinfo' %>
       </div>
     </div>
-    <div class="col s6">
-      <div class="row">
+    <div class="col-sm-6">
       <%= form_for @booking do |f| %>
-      <%= f.hidden_field :user_id, :value => @user %>
-      <%= f.hidden_field :flight_id, :value => @flight.id %>
-      <%= f.hidden_field :payment_status, :value => false %>
-      <%= f.hidden_field :seats, :value => @seats %>
-        <div class="col 10" id="passengers">
-          <%= f.fields_for :passengers do |passengers_form| %>
-            <div class="col s6">
-              <%= passengers_form.label :first_name, "Firstname" %>
-              <%= passengers_form.text_field :first_name %>
+        <%= f.hidden_field :user_id, :value => @user %>
+        <%= f.hidden_field :flight_id, :value => @flight.id %>
+        <%= f.hidden_field :payment_status, :value => false %>
+        <%= f.hidden_field :seats, :value => @seats %>
+
+        <%= f.fields_for :passengers do |passengers_form| %>
+        <div class="passenger-fields">
+          <div class="row div-pad">
+            <div class="col-sm-6">
+              <%= passengers_form.text_field :first_name, class: "form-control",  placeholder: "Firstname" %>
             </div>
-            <div class="col s6">
-              <%= passengers_form.label :last_name, "Lastname" %>
-              <%= passengers_form.text_field :last_name %>
+            <div class="col-sm-6 ">
+              <%= passengers_form.text_field :last_name, class: "form-control",  placeholder: "Lastname" %>
             </div>
-            <div class="col s6">
-              <%= passengers_form.label :email, "Email" %>
-              <%= passengers_form.email_field :email %>
+          </div>
+          <div class="row div-pad">
+            <div class="col-sm-6 ">
+              <%= passengers_form.email_field :email, class: "form-control",  placeholder: "Email" %>
             </div>
-            <div class="col s3">
-              <%= passengers_form.label :phone, "Phone No" %>
-              <%= passengers_form.text_field :phone %>
+            <div class="col-sm-4">
+              <%= passengers_form.text_field :phone, class: "form-control",  placeholder: "Phone" %>
             </div>
-            <div class="col s3">
-              <%= passengers_form.label :cabin, "Cabin Class" %>
-              <%= passengers_form.select(:cabin, ["Economy", "Business", "First"], {}, { :class => 'browser-default' }) %>
+            <div class="col-sm-2">
+              <%= passengers_form.select(:cabin, ["Economy", "Business", "First"], {}, { :class => 'my-select' }) %>
             </div>
-          <% end %>
+          </div>
         </div>
-        <div class="row"> <%= f.submit "Book", class: "btn black"%></div>
-      <% end %>
-      </div>
+        <% end %>
+          <div class="row div-pad"> <%= f.submit "Book", class: "btn btn-success"%></div>
+        <% end %>
     </div>
   </div>
 </div>
