@@ -1,47 +1,47 @@
 <%= render partial: 'header' %>
   <div class="container box">
     <div class="row all-flight">
-      <div class="col s2">
+      <div class="col-sm-2">
          <span> Airline </span>
       </div>
-      <div class="col s3">
+      <div class="col-sm-3">
         <span> From</span>
       </div>
-      <div class="col s3">
+      <div class="col-sm-3">
           <span> To </span>
       </div>
-       <div class="col s2">
+       <div class="col-sm-2">
         <span> Departure Time </span>
       </div>
-       <div class="col s1">
+       <div class="col-sm-1">
         <span> Duration </span>
       </div>
-      <div class="col s1">
+      <div class="col-sm-1">
         <span> Book </span>
       </div>
     </div>
     <% @flights.each do |flight| %>
     <div class="row my-flight">
-      <div class="col s2">
+      <div class="col-sm-2">
          <p><%= flight.airline%></p>
       </div>
-      <div class="col s3">
+      <div class="col-sm-3">
        <p><%= flight.departure.name%></p>
        <p><%= flight.departure.location%></p>
       </div>
-      <div class="col s3">
+      <div class="col-sm-3">
         <p><%= flight.arrival.name%></p>
         <p><%= flight.arrival.location%></p>
       </div>
-       <div class="col s2">
+       <div class="col-sm-2">
         <p><%= flight.departure_date%></p>
         <p><%= flight.departure_time%></p>
       </div>
-       <div class="col s1">
+       <div class="col-sm-1">
         <p><%= flight.duration%>hrs</p>
       </div>
-      <div class="col s1">
-        <%= link_to new_booking_path(:flight => flight.id, :passengers => 1) do %> <%= image_tag("fly.jpg") %> <% end %>
+      <div class="col-sm-1">
+        <%= link_to new_booking_path(:flight => flight.id, :passengers => @seats) do %> <%= image_tag("fly.png") %> <% end %>
       </div>
     </div>
     <% end %>

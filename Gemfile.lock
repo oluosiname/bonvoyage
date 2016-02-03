@@ -45,9 +45,14 @@ GEM
     arel (6.0.3)
     ast (2.2.0)
     attr_required (1.0.1)
+    autoprefixer-rails (6.3.1)
+      execjs
+      json
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.2.0.2)
+      sass (~> 3.2)
     builder (3.2.2)
     byebug (8.2.1)
     codeclimate-test-reporter (0.4.8)
@@ -100,8 +105,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    materialize-sass (0.97.5)
-      sass (~> 3.3)
     method_source (0.8.2)
     mime-types (2.99)
     mini_portile2 (2.0.0)
@@ -242,7 +245,9 @@ PLATFORMS
 
 DEPENDENCIES
   activemerchant
+  autoprefixer-rails
   bcrypt (~> 3.1.7)
+  bootstrap-sass (~> 3.2.0.2)
   byebug
   codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
@@ -253,13 +258,13 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   letter_opener
-  materialize-sass
   paypal-express
   pg
   pry-nav
   pry-rails
   rails (= 4.2.5)
   rails_12factor (= 0.0.2)
+  rest-client (~> 1.8)
   rspec-rails
   rubocop
   sass-rails (~> 5.0)

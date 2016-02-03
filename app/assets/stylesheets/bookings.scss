@@ -1,19 +1,79 @@
 @import "application";
 
-.thick-border {
-  border: 3px solid $my-gray;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 1.5em;
-}
-
 .thin-wrap {
-   border: 1px solid $my-gray;
-   height: 6em;
+  border: 1px solid $my-gray;
+  height: 6em;
 }
 
-.bold-text {
+.flight-details {
+  border-bottom: 1px solid $medium-gray;
+  color: $my-black;
+  font-family: $section-font;
+  font-size: 1em;
+  height: 3em;
+  padding: 1em;
+}
+
+.flight-details-header {
+  border-bottom: 1px solid $medium-gray;
+  font-family: $section-font;
+  font-weight: bolder;
+  padding: 0.32em 0.35em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.passenger-fields {
+  border-bottom: 2px solid $medium-blue;
+  height: auto;
+  padding-bottom: 1em;
+  padding-top: 2em;
+}
+
+.div-pad {
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+}
+
+.div-pad-big {
+  padding: 1em;
+}
+
+.confirm-head {
+  background-color: $deep-blue;
+  border-radius: 5px 5px 0 0;
+  color: $my-white;
+  font-size: 1em;
+  height: 2.8em;
+  line-height: 2.8em;
+  text-align: left;
+}
+
+.my-select {
+  background: transparent;
   color: $my-black;
   font-size: 0.9em;
-  font-weight: bold;
+  height: 2.5em;
+}
+
+.success-booking {
+
+  text-align: center;
+  text-transform: uppercase;
+  width: 40%;
+}
+
+.success-box {
+  border-radius: 4px;
+  padding: 1em;
+  position: relative;
+  top: 6em;
+  width: 60% !important;
+}
+
+.success-container {
+  border: 0.063em solid $light-blue-border;
+  border-radius: 0.303em;
+  padding: 0;
+  position: relative;
 }

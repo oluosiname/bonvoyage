@@ -1,30 +1,44 @@
 @import "application";
 
+.signup-header {
+  background-color: $medium-blue;
+  border-bottom: 0.063em solid $light-blue-border;
+  border-radius: 2px 2px 0 0;
+  color: $my-white;
+  height: 2.6em;
+  padding-left: 1.4em;
+  padding-top: 0.4em;
+}
+
+.my-fields {
+  color: $my-black !important;
+  height: 4.4em !important;
+  left: 2.6em;
+  position: relative;
+  top: 1em;
+  width: 28em;
+}
+
 .label-font {
   color: $my-black;
-  font-family: "Open Sans", sans-serif;
+  font-family: $open-sans;
   font-size: 0.9em;
 
   a {
-    color: $my-black;
     font-weight: bold;
     text-decoration: none;
   }
 }
 
-.input-field {
-  border-radius: 0.2em !important;
+.signup-down {
+  border-top: 1px solid $my-black;
   color: $my-black !important;
-  height: 1em !important;
-  padding: 0.4em !important;
-}
-
-.sign-up-button {
-  background: $light-blue-text;
-  border-radius: 2px;
-  color: $my-white;
-  display: inline-block;
-  text-align: center;
+  height: 5em !important;
+  left: 1.5em;
+  padding-left: 0.4em;
+  padding-top: 1em;
+  position: relative;
+  width: 28em;
 }
 
 .big-error {
@@ -38,26 +52,21 @@
   font-size: 0.8em;
 }
 
-.forgot-password {
-  #show-password:checked + [for="show-password"]::before {
-    border-right: 2px solid $my-black;
-    border-bottom: 2px solid $my-black;
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
-}
-
-.sign-up-container {
-  padding: 2em;
+.signup-container {
+  border: 0.063em solid $light-blue-border;
+  border-radius: 0.303em;
+  padding: 0 !important;
   position: relative;
-  width: 40% !important;
   top: 8em;
+  width: 34% !important;
 }
 
 .header {
   font-size: 1.4em;
+}
+
+.user-icon {
+  text-align: center;
 }
 
 

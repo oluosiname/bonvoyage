@@ -1,52 +1,56 @@
 <%= render partial: 'header' %>
-<div class="main-bg">
 
-<div class="container sign-up-container">
-<div class="header center">Sign Up </div>
+<div class="container signup-container">
+  <div class="signup-header">
+    Sign Up
+  </div>
+  <div class="row user-icon">
+      <%= image_tag("user.png") %>
+    </div>
   <% unless flash["errors"].nil? %>
-    <div class ="row center">
+    <div class ="row my-fields">
       <% flash["errors"].each do |error| %>
-        <span class="big-error"> <%= error %></span>
+        <span class="big-error center"> <%= error %></span>
       <% end %>
     </div>
   <% end %>
-
   <%= form_for (@user) do |f| %>
-      <div class="row">
-        <div class="col s12">
-          <span class="label-font">Username</span>
-          <span class="small-error right" id="password-error"></span>
-          <%= f.text_field :username, class: "browser-default" %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12">
-          <span class="label-font">Email</span>
-          <span class="small-error" id="email-error"></span>
-          <%= f.email_field :email, class: "browser-default" %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12">
-          <span class="label-font">Password</span>
-          <span class="small-error" id="password-error"></span>
-          <%= f.password_field :password, class: "browser-default", id: "password" %>
-          <div class="col s12 forgot-password">
-          <input type="checkbox" id="show-password" />
-          <label for="show-password" title="show password" class="label-font">show password</label>
-        </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s8">
-        <%= f.submit "Sign Up", class: "btn blue", id: "submit-signup", disabled: "disabled" %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s8">
-        <span class="label-font"> Already got an account? <%= link_to "Sign In", login_path %> </span>
-      </div>
+  <div class="row my-fields">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-user"></i></span>
+      <%= f.text_field :username, class: "form-control",  placeholder: "Username" %>
     </div>
+  </div>
+
+  <div class="row my-fields">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-envelope"></i>
+      </span>
+      <%= f.text_field :email, class: "form-control",  placeholder: "Email" %>
+    </div>
+  </div>
+
+  <div class="row my-fields">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-lock"></i>
+      </span>
+      <%= f.password_field :password, class: "form-control", id: "password", placeholder: "Password" %>
+    </div>
+  </div>
+
+  <div class="row my-fields">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-lock"></i>
+      </span>
+      <%= f.password_field :confirmpassword, class: "form-control", id: "password", placeholder: "Confirm Password" %>
+    </div>
+  </div>
+
+  <div class="row my-fields">
+    <%= f.submit "Sign Up", class: "btn btn-success", id: "submit-signup", disabled: "disabled" %>
+  </div>
+  <div class="row signup-down">
+    <span class="label-font"> Already got an account? <%= link_to "Sign In", login_path %> </span>
+  </div>
   <% end %>
-</div>
 </div>

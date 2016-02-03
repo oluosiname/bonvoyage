@@ -12,7 +12,6 @@ gem "coffee-rails", "~> 4.1.0"
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem "therubyracer", platforms: :ruby
 # Use materialize css
-gem "materialize-sass"
 # Use font awesome
 gem "font-awesome-sass"
 # Use jquery as the JavaScript library
@@ -21,6 +20,8 @@ gem "font-awesome-sass"
 gem "jquery-rails"
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem "turbolinks"
+gem "bootstrap-sass", "~> 3.2.0.2"
+gem "autoprefixer-rails"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.0"
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -32,6 +33,8 @@ gem "codeclimate-test-reporter", group: :test
 
 gem "bcrypt", "~> 3.1.7"
 gem "paypal-express"
+
+gem "rest-client", "~> 1.8"
 
 # Use Unicorn as the app server
 # gem "unicorn"
