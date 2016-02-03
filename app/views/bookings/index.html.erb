@@ -1,0 +1,62 @@
+<%= render partial: 'header' %>
+  <div class="container bookings-box">
+    <div class="row all-flight">
+      <div class="col-sm-1">
+         <span> Ref </span>
+      </div>
+      <div class="col-sm-1">
+         <span> Airline </span>
+      </div>
+      <div class="col-sm-3">
+        <span> From</span>
+      </div>
+      <div class="col-sm-3">
+          <span> To </span>
+      </div>
+       <div class="col-sm-1">
+        <span> Departure Time </span>
+      </div>
+       <div class="col-sm-1">
+        <span> seats </span>
+      </div>
+      <div class="col-sm-1">
+        <span> cost </span>
+      </div>
+      <div class="col-sm-1">
+        <span> cost </span>
+      </div>
+
+    </div>
+    <% @bookings.each do |booking| %>
+    <div class="row my-flight">
+      <div class="col-sm-1">
+         <p><%= booking.ref%></p>
+      </div>
+      <div class="col-sm-1">
+         <p><%= booking.flight.airline%></p>
+      </div>
+      <div class="col-sm-3">
+       <p><%= booking.flight.departure.name%></p>
+       <p><%= booking.flight.departure.location%></p>
+      </div>
+      <div class="col-sm-3">
+        <p><%= booking.flight.arrival.name%></p>
+        <p><%= booking.flight.arrival.location%></p>
+      </div>
+       <div class="col-sm-1">
+        <p><%= booking.flight.departure_date%></p>
+        <p><%= booking.flight.departure_time%></p>
+      </div>
+       <div class="col-sm-1">
+        <p><%= booking.seats%></p>
+      </div>
+      <div class="col-sm-1">
+        <p><%= booking.cost%></p>
+      </div>
+      <div class="col-sm-1">
+        <p><%= booking.seats%></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
