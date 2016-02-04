@@ -8,8 +8,8 @@ class FlightsController < ApplicationController
       @flights = Flight.by_route(
         params[:departure_id], params[:arrival_id]).by_date(params[:date])
     end
-    redirect_to root_path unless @flights.length > 0
     flash[:notice] = "No Flights Available For That Search"
+    redirect_to root_path if @flights.length < 1
   end
 
   def all

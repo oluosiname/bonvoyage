@@ -1,25 +1,6 @@
 <%= render partial: 'header' %>
   <div class="container box">
-    <div class="row all-flight">
-      <div class="col-sm-2">
-         <span> Airline </span>
-      </div>
-      <div class="col-sm-3">
-        <span> From</span>
-      </div>
-      <div class="col-sm-3">
-          <span> To </span>
-      </div>
-       <div class="col-sm-2">
-        <span> Departure Time </span>
-      </div>
-       <div class="col-sm-1">
-        <span> Duration </span>
-      </div>
-      <div class="col-sm-1">
-        <span> Book </span>
-      </div>
-    </div>
+  <%= render partial: 'partials/flighthead' %>
     <% @flights.each do |flight| %>
     <div class="row my-flight">
       <div class="col-sm-2">
@@ -40,7 +21,7 @@
        <div class="col-sm-1">
         <p><%= flight.duration%>hrs</p>
       </div>
-      <div class="col-sm-1 pull-right">
+      <div class="col-sm-1">
         <%= link_to new_booking_path(:flight => flight.id, :passengers => 1) do %> <%= image_tag("fly.png") %> <% end %>
       </div>
     </div>

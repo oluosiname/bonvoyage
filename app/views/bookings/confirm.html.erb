@@ -9,14 +9,14 @@
       <div class="col-sm-6">
         <div class="row confirm-head">
           <div class="col-sm-4">Name</div>
-          <div class="col-sm-4">Email</div>
+          <div class="col-sm-4">Phone</div>
           <div class="col-sm-2">cabin</div>
           <div class="col-sm-2">cost</div>
         </div>
       <% @passengers.each do |passenger| %>
         <div class="row passenger-fields">
-          <div class="col-sm-4"><%= passenger.first_name + " " + passenger.last_name %></div>
-          <div class="col-sm-4"><%= passenger.email %></div>
+          <div class="col-sm-4"><%= passenger.name %></div>
+          <div class="col-sm-4"><%= passenger.phone %></div>
           <div class="col-sm-2"><%= passenger.cabin %></div>
           <div class="col-sm-2">&#x20A6;<%= passenger.cost %></div>
         </div>
