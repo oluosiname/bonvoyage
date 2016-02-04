@@ -11,8 +11,8 @@
       <% unless @user %>
       <div class="div-pad">You are not signed up, provide an email to receive your boking details</div>
       <div class="div-pad"> <%= f.email_field :anon_email, class: "form-control",  placeholder: "Email" %></div>
-      <div class="search-head">Passenger Details</div>
       <% end %>
+            <div class="search-head">Passenger Details</div>
         <%= f.hidden_field :user_id, :value => @user %>
         <%= f.hidden_field :flight_id, :value => @flight.id %>
         <%= f.hidden_field :payment_status, :value => false %>

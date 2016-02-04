@@ -20,6 +20,14 @@ class BookingsController < ApplicationController
     @bookings = Booking.by_user(session[:user_id])
   end
 
+  def edit
+  end
+
+  def destroy
+    Booking.find(params[:id]).destroy
+    flash[:success] = "Your Booking has Been Deleted"
+    redirect_to bookings_path
+  end
 
   def confirm
     @booking = Booking.find_by_id(session[:booking])

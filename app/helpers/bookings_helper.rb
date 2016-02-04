@@ -12,6 +12,10 @@ module BookingsHelper
     passengers.inject(0) { |cost, passenger| cost + passenger.cost }
   end
 
+  def available?(flight_date)
+    flight_date > Time.now
+  end
+
   def payment_url(booking)
     values = {
       business: "oluosiname-facilitator@yahoo.com",
