@@ -1,5 +1,12 @@
 <%= render partial: 'header' %>
   <div class="container bookings-box">
+  <% unless flash['success'].blank?  %>
+  <div class="alert alert-success success-booking" role="alert">
+    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+    <span class="sr-only">Success:</span>
+    <%= flash['success'] %>
+  </div>
+  <% end %>
     <div class="row all-flight">
       <div class="col-sm-1">
          <span> Ref </span>
@@ -23,40 +30,10 @@
         <span> cost </span>
       </div>
       <div class="col-sm-1">
-        <span> cost </span>
+        <span> </span>
       </div>
 
     </div>
-    <% @bookings.each do |booking| %>
-    <div class="row my-flight">
-      <div class="col-sm-1">
-         <p><%= booking.ref%></p>
-      </div>
-      <div class="col-sm-1">
-         <p><%= booking.flight.airline%></p>
-      </div>
-      <div class="col-sm-3">
-       <p><%= booking.flight.departure.name%></p>
-       <p><%= booking.flight.departure.location%></p>
-      </div>
-      <div class="col-sm-3">
-        <p><%= booking.flight.arrival.name%></p>
-        <p><%= booking.flight.arrival.location%></p>
-      </div>
-       <div class="col-sm-1">
-        <p><%= booking.flight.departure_date%></p>
-        <p><%= booking.flight.departure_time%></p>
-      </div>
-       <div class="col-sm-1">
-        <p><%= booking.seats%></p>
-      </div>
-      <div class="col-sm-1">
-        <p><%= booking.cost%></p>
-      </div>
-      <div class="col-sm-1">
-        <p><%= booking.seats%></p>
-      </div>
-    </div>
-    <% end %>
+    <%= render partial: 'partials/userbookings' %>
   </div>
 

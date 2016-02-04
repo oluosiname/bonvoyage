@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
@@ -33,9 +32,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :bookings, only: [:index, :edit] do
+   resources :bookings, only: [:new, :edit, :create, :destroy] do
     collection do
-      get "new", to: "bookings#new"
+      get "/", to: "bookings#index"
       post "new", to: "bookings#create"
       get "confirm", to: "bookings#confirm"
       get "success", to: "bookings#success"

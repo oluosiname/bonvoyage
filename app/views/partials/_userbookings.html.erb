@@ -1,0 +1,33 @@
+<% @bookings.each do |booking| %>
+    <div class="row my-flight">
+    <div class="col-sm-1">
+       <p><%= booking.ref %></p>
+    </div>
+    <div class="col-sm-1">
+       <p><%= booking.flight.airline %></p>
+    </div>
+    <div class="col-sm-3">
+     <p><%= booking.flight.departure.name %></p>
+     <p><%= booking.flight.departure.location %></p>
+    </div>
+    <div class="col-sm-3">
+      <p><%= booking.flight.arrival.name%></p>
+      <p><%= booking.flight.arrival.location%></p>
+    </div>
+     <div class="col-sm-1">
+      <p><%= booking.flight.departure_date%></p>
+      <p><%= booking.flight.departure_time%></p>
+    </div>
+     <div class="col-sm-1">
+      <p><%= booking.seats%></p>
+    </div>
+    <div class="col-sm-1">
+      <p><%= booking.cost%></p>
+    </div>
+    <% if available?(booking.flight.departure_date) %>
+    <div class="col-sm-1">
+      <%= link_to booking_path(booking.id), method: :delete do %> <p class="large-icon"><span class="glyphicon glyphicon-remove-circle"></span></p> <% end %>
+    </div>
+    <% end %>
+  </div>
+<% end %>
