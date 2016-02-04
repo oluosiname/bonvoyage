@@ -16,7 +16,7 @@
     <div class="col-sm-3"> <%= @booking.flight.airline %> </div>
     <div class="col-sm-2"> <%= @booking.flight.id %> </div>
     <div class="col-sm-2"> <%= @booking.seats %> </div>
-    <div class="col-sm-2"> $<%= @booking.cost %> </div>
+    <div class="col-sm-2"> &#x20A6;<%= @booking.cost %> </div>
   </div>
 
   <div class="row div-pad">Passenger Details</div>
@@ -33,7 +33,7 @@
     <div class="col-sm-3"> <%= passenger.last_name %> </div>
     <div class="col-sm-2"> <%= passenger.cabin %> </div>
     <div class="col-sm-2"> <%= passenger.cabin %> </div>
-    <div class="col-sm-2"> $<%= passenger.cost %> </div>
+    <div class="col-sm-2"> &#x20A6;<%= passenger.cost %> </div>
   </div>
   <% end %>
 </div>

@@ -33,13 +33,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :bookings do
+  resources :bookings, only: [:index, :edit] do
     collection do
-      get "new", to: "bookings#make_new"
-      post "new", to: "bookings#make"
+      get "new", to: "bookings#new"
+      post "new", to: "bookings#create"
       get "confirm", to: "bookings#confirm"
       get "success", to: "bookings#success"
-      post "confirm", to: "bookings#add"
     end
   end
 
