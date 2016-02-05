@@ -12,6 +12,7 @@
        <%= form_tag %>
     <div class="row div-pad-big">
       <div class="col-sm-6">
+      <div class="div-pad"> Departure </div>
         <select name="departure_id" class="my-select">
         <% Airport.all.order("name ASC").each do |airport| %>
           <option value="<%= airport.id %>"> <%= airport.name << " " << airport.location %> </option>
@@ -19,6 +20,7 @@
         </select>
       </div>
       <div class="col-sm-6">
+      <div class="div-pad"> Arrival </div>
         <select name="arrival_id" class="my-select">
         <% Airport.all.order("name ASC").each do |airport| %>
           <option value="<%= airport.id %>"> <%= airport.name << " " << airport.location %> </option>
@@ -28,11 +30,12 @@
     </div>
     <div class="row div-pad-big">
       <div class="col-sm-6">
+      <div class="div-pad"> Departure date</div>
         <input id="departure_date" name="date" type="date" class="date-picker"/>
       </div>
 
       <div class="col-sm-4">
-        <span class="my-small-font">Passengers</span>
+        <div class="div-pad"> Passengers</div>
         <select name="seats" class="my-select">
           <% for i in (1..10) do i %>
             <option> <%= i %> </option>
@@ -40,7 +43,9 @@
         </select>
       </div>
       <div class="col-sm-1">
-        <%= submit_tag "Search", class: "btn btn-success", id: "submit-signup" %>
+      <div class="div-pad"> &nbsp; </div>
+        <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search<% end %>
       </div>
     </div>
 

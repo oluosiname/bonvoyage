@@ -1,0 +1,16 @@
+<%= render partial: 'header' %>
+<div class="container search-input">
+  <div class="row">
+  <div class="div-pad"> Search For a Past Booking </div>
+    <%= form_tag %>
+    <div class="input-group">
+      <%= text_field_tag :ref, "", class: "form-control", placeholder: "Booking Ref..." %>
+        <span class="input-group-btn">
+        <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search<% end %>
+        </span>
+    </div>
+  </div>
+</div>
+
+

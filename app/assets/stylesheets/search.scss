@@ -11,31 +11,23 @@
 }
 
 .header-menu {
-  font-family: $head-text;
+  font-family: $helvetica;
   font-size: 1em;
   font-weight: 400;
   z-index: 2;
 
-  ul li {
-    color: $my-black;
-    display: inline;
-    padding-left: 1em;
-    padding-right: 2em;
-    text-decoration: none;
-  }
-
   a {
     color: $my-black;
-    text-decoration: none;
-
-    &:hover {
-      color: $medium-blue;
-    }
-
-    &:active {
-      color: $my-white;
-    }
+    text-decoration: none !important;
   }
+}
+
+.list-inline  {
+  color: $my-black;
+  display: inline;
+  padding-left: 1em;
+  padding-right: 2em;
+  text-decoration: none;
 }
 
 .my-container {
@@ -46,12 +38,6 @@
   padding: 1em;
   position: relative;
   top: 8em;
-}
-
-.my-small-font {
-  color: $my-gray;
-  font-family: $open-sans;
-  font-size: 0.8em;
 }
 
 .my-big-font {
@@ -184,7 +170,16 @@
   width: 100%;
 }
 
+.pad {
+  padding-left: 10em;
 
+  li {
+    padding-left: 2em;
+    padding-right: 3em;
+    width: 151em;
+  }
+
+}
 
 
 

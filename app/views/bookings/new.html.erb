@@ -16,33 +16,18 @@
         <%= f.hidden_field :user_id, :value => @user %>
         <%= f.hidden_field :flight_id, :value => @flight.id %>
         <%= f.hidden_field :payment_status, :value => false %>
-        <%= f.hidden_field :seats, :value => @seats %>
 
-        <%= f.fields_for :passengers do |passengers_form| %>
-        <div class="passenger-fields">
-          <div class="row div-pad">
-            <div class="col-sm-6">
-              <%= passengers_form.text_field :first_name, class: "form-control",  placeholder: "Firstname" %>
-            </div>
-            <div class="col-sm-6 ">
-              <%= passengers_form.text_field :last_name, class: "form-control",  placeholder: "Lastname" %>
-            </div>
-          </div>
-          <div class="row div-pad">
-            <div class="col-sm-6 ">
-              <%= passengers_form.email_field :email, class: "form-control",  placeholder: "Email" %>
-            </div>
-            <div class="col-sm-3">
-              <%= passengers_form.text_field :phone, class: "form-control",  placeholder: "Phone" %>
-            </div>
-            <div class="col-sm-3">
-              <%= passengers_form.select(:cabin, ["Economy", "Business", "First"], {}, { :class => 'my-select' }) %>
-            </div>
-          </div>
-        </div>
+        <%= f.fields_for :passengers do |passenger| %>
+         <%= render 'passenger_fields', f: passenger %>
         <% end %>
-          <div class="row div-pad-big"> <%= f.submit "Book", class: "btn btn-success"%></div>
-        <% end %>
+        <div class="div-pad">
+         <%= link_to_add_association f, :passengers do %>
+         <%= button_tag(type: "button", class: "btn btn-success") do %>
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add <% end %>
+         <% end %>
+         </div>
+          <div class="row div-pad-big"> <%= f.submit "Book", class: "btn btn-primary"%></div>
+      <% end %>
     </div>
   </div>
 </div>

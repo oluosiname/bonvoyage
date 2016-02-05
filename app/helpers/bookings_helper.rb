@@ -27,7 +27,7 @@ module BookingsHelper
 
     booking.passengers.each_with_index do |passenger, index|
       values["amount_#{index + 1}"] = convert(passenger.cost)
-      values["item_name_#{index + 1}"] = passenger.first_name
+      values["item_name_#{index + 1}"] = passenger.name
     end
     "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
   end

@@ -15,7 +15,7 @@ gem "coffee-rails", "~> 4.1.0"
 # Use font awesome
 gem "font-awesome-sass"
 # Use jquery as the JavaScript library
-
+gem "cocoon"
 # Use jquery as the JavaScript library
 gem "jquery-rails"
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -47,12 +47,14 @@ group :development, :test do
   gem "rubocop", require: false
   gem "scss_lint", require: false
   gem "sqlite3"
+  gem "capybara"
   gem "factory_girl_rails"
   gem "letter_opener"
   gem "shoulda-matchers", "~> 3.0"
   gem "figaro"
   gem "pry-rails"
   gem "pry-nav"
+  gem 'database_cleaner'
 end
 
 group :development do

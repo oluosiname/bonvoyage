@@ -90,6 +90,15 @@
   span.glyphicon {
     color: $google-red;
     font-size: 1.8em;
+  }
+
 }
 
+.search-input {
+  background-color: $my-white;
+  padding: 1em;
+  position: relative;
+  text-align: center;
+  top: 6em;
+  width: 40% !important;
 }

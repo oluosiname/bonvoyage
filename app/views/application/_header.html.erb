@@ -1,17 +1,30 @@
 <div class="my-header">
   <div class="header-menu">
     <ul class="pull-left">
-      <%=link_to all_flights_path(:page => 1) do %> <li>All Flights</li> <% end %>
-      <%=link_to root_path do %><li>Search</li> <% end %>
-      <% unless logged_in? %>
-        <%=link_to login_path do %><li> Sign In </li><% end %>
-      <% end %>
+      <%=link_to all_flights_path(:page => 1) do %> <li class="list-inline">All Flights</li> <% end %>
+      <%=link_to root_path do %><li class="list-inline">Search</li> <% end %>
+      <% if logged_in? %>
     </ul>
     <ul class="pull-right">
-      <% if logged_in? %>
-      <li>Welcome &nbsp; <%= @current_user.username %></li>
-      <%= link_to logout_path do %><li>Log Out</li><% end %>
-      <% end %>
+
+      <li role="presentation" class="dropdown list-inline">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          My Account <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu pad">
+          <%= link_to bookings_path do %><li>Past Bookings</li><% end %>
+          <%= link_to search_bookings_path do %><li>Manage Bookings</li><% end %>
+          <%= link_to logout_path do %><li>Log Out</li><% end %>
+        </ul>
+      </li>
+      <li class="list-inline">Welcome &nbsp; <%= @current_user.username %></li>
+      <li class="list-inline"> &nbsp; </li>
     </ul>
+    <% else %>
+        <%=link_to login_path do %><li class="list-inline"> Sign In </li><% end %>
+    </ul>
+    <% end %>
   </div>
 </div>
+
+
