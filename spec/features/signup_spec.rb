@@ -28,5 +28,16 @@ RSpec.describe "Signup", type: :feature do
       click_button "Sign Up"
       expect(page).to have_content "Welcome Kpeace"
     end
+
+    scenario "new user sign up with existing email" do
+      create(:user)
+      visit new_user_path
+      fill_in "Username", with: "Kpeace"
+      fill_in "Email", with: "olu@gmop.com"
+      fill_in "Password", with: "password"
+      fill_in "user[confirmpassword]", with: "password"
+      click_button "Sign Up"
+      expect(page).to have_content "Email has already been taken"
+    end
   end
 end

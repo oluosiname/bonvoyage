@@ -1,4 +1,8 @@
 describe "the signin process", :type => :feature do
+
+  before(:all) do
+    User.destroy_all
+  end
   before :each do
     @user = create(:user)
   end
