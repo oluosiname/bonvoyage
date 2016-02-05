@@ -7,7 +7,7 @@ RSpec.describe "Signup", type: :feature do
 
   context "Signup" do
     context "While on sign in page" do
-      scenario "page has content 'Sign Up'" do
+      scenario "page has content 'Sign Up' " do
         visit login_path
         within(:css, "div.signup-down") do
           click_link "Sign Up"
@@ -15,6 +15,29 @@ RSpec.describe "Signup", type: :feature do
         expect(page).to have_current_path(new_user_path)
         expect(page).to have_content("Sign Up")
       end
+    end
+  end
+
+  context "sign up" do
+    scenario "new user sign up" do
+      visit new_user_path
+      fill_in "Username", with: "Kpeace"
+      fill_in "Email", with: "example@example.com"
+      fill_in "Password", with: "password"
+      fill_in "user[confirmpassword]", with: "password"
+      click_button "Sign Up"
+      expect(page).to have_content "Welcome Kpeace"
+    end
+
+    scenario "new user sign up with existing email" do
+      create(:user)
+      visit new_user_path
+      fill_in "Username", with: "Kpeace"
+      fill_in "Email", with: "olu@gmop.com"
+      fill_in "Password", with: "password"
+      fill_in "user[confirmpassword]", with: "password"
+      click_button "Sign Up"
+      expect(page).to have_content "Email has already been taken"
     end
   end
 end
