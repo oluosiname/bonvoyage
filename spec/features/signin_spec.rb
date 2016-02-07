@@ -14,7 +14,7 @@ describe "the signin process", type: :feature do
         fill_in "Password", with: @user.password
       end
       click_button "Sign In"
-      expect(page).to have_content "Welcome"
+      expect(page).to have_content "Welcome Adebayo"
     end
   end
 

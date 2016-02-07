@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Booking, type: :model do
-  before (:all) do
+  before :all do
     User.destroy_all
     Booking.destroy_all
   end
