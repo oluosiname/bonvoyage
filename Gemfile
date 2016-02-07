@@ -54,7 +54,8 @@ group :development, :test do
   gem "figaro"
   gem "pry-rails"
   gem "pry-nav"
-  gem 'database_cleaner'
+  gem "database_cleaner"
+  gem "simplecov"
 end
 
 group :development do
