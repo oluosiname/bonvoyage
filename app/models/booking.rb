@@ -5,7 +5,7 @@ class Booking < ActiveRecord::Base
   accepts_nested_attributes_for :passengers, reject_if: :all_blank, allow_destroy: true
 
   before_create :set_ref
-  before_create :set_seats
+  before_save :set_seats
 
   def set_ref
     self.ref = (0..9).to_a.sample(8).join

@@ -18,9 +18,6 @@ Rails.application.routes.draw do
   root to: "flights#search"
 
   resources :users, only: [:new, :create] do
-    collection do
-      get "ss"
-    end
   end
 
   resources :flights do
@@ -32,10 +29,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :bookings, only: [:new, :edit, :create, :destroy] do
+  resources :bookings, only: [:new, :edit, :update, :create, :destroy] do
     collection do
       get "/", to: "bookings#index"
       get "search", to: "bookings#search"
+      post "search", to: "bookings#result"
       post "new", to: "bookings#create"
       get "confirm", to: "bookings#confirm"
       get "success", to: "bookings#success"

@@ -1,19 +1,20 @@
 <div class="nested-fields passengers">
   <div class="row div-pad">
     <div class="col-sm-5 ">
-      <%= f.text_field :name, class: "form-control",  placeholder: "Name" %>
+      <%= f.text_field :name, class: "form-control",  placeholder: "Name", required: "required" %>
     </div>
     <div class="col-sm-3">
-      <%= f.text_field :phone, class: "form-control",  placeholder: "Phone" %>
+      <%= f.text_field :phone, class: "form-control",  placeholder: "Phone", required: "required" %>
     </div>
     <div class="col-sm-2">
       <%= f.select(:cabin, ["Economy", "Business", "First"], {}, { :class => 'my-select' }) %>
     </div>
+    <% if @booking.new_record? %>
     <div class="col-sm-1">
-    <%= link_to_remove_association f do %>
-    <%= button_tag(type: "button", class: "btn btn-danger") do %>
+    <%= button_tag(type: "button", class: "btn btn-danger delete_passenger") do %>
           <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> <% end %>
-    <% end %>
+
     </div>
+    <% end %>
   </div>
 </div>
