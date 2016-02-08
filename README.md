@@ -3,9 +3,7 @@
 [![Code Climate](https://codeclimate.com/github/andela-oosiname/bonvoyage/badges/gpa.svg)](https://codeclimate.com/github/andela-oosiname/bonvoyage)
 <a href="https://codeclimate.com/github/andela-oosiname/bonvoyage/coverage"><img src="https://codeclimate.com/github/andela-oosiname/bonvoyage/badges/coverage.svg" /></a>
 
-[![Coverage Status](https://coveralls.io/repos/github/andela-oosiname/bonvoyage/badge.svg?branch=ft-manage-user-bookings-112728597)](https://coveralls.io/github/andela-oosiname/bonvoyage?branch=ft-manage-user-bookings-112728597)
-
-
+## Dependencies
 To contribute to this work:
 
 1. Fork it ( https://github.com/[andela-oosiname]/bonvoyage )
@@ -70,13 +68,8 @@ You can also cancel a booking if the flight has not departed.
 Mails are also sent to the user for every booking completed. This mail contains the booking information, including the booking ref number with which a flight can be searched.
 
 ##Limitations
+
 Money paid for a booking cannot be refunded for now, App is still in development phase.
 ##Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/andela-oosiname/bonvoyage.
-
-How can I get started with the application?
-
-What are the  external dependencies of the project?
-What are the features of the application?
-What are the limitations of the application?
