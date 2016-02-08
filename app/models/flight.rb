@@ -8,5 +8,7 @@ class Flight < ActiveRecord::Base
   end
        )
 
+  scope :available, -> { where("departure_date >= ?", Time.now) }
+
   scope :by_date, ->(date) { where("departure_date = ?", date) }
 end
