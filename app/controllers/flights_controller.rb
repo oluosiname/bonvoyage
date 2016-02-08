@@ -2,7 +2,8 @@ class FlightsController < ApplicationController
   def result
     @seats = params[:seats]
     if params[:date] == ""
-      @flights = Flight.by_route(params[:departure_id], params[:arrival_id])
+      @flights = Flight.by_route(
+        params[:departure_id], params[:arrival_id]).available
     else
       @flights = Flight.by_route(
         params[:departure_id], params[:arrival_id]).by_date(params[:date])
