@@ -8,25 +8,30 @@
     </div>
     <div class="col-sm-6">
       <%= form_for @booking do |f| %>
-      <% unless @user %>
-      <div class="div-pad">You are not signed up, provide an email to receive your boking details</div>
-      <div class="div-pad"> <%= f.email_field :anon_email, class: "form-control",  placeholder: "Email" %></div>
-      <% end %>
-            <div class="search-head">Passenger Details</div>
-        <%= f.hidden_field :user_id, :value => @user %>
+        <% unless logged_in? %>
+        <div class="div-pad">You are not signed up, provide an email to receive your boking details</div>
+        <div class="div-pad"> <%= f.email_field :anon_email, class: "form-control",  placeholder: "Email" %></div>
+        <% end %>
+        <div class="search-head">Passenger Details</div>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
         <%= f.hidden_field :flight_id, :value => @flight.id %>
         <%= f.hidden_field :payment_status, :value => false %>
 
         <%= f.fields_for :passengers do |passenger| %>
          <%= render 'passenger_fields', f: passenger %>
         <% end %>
-        <div class="div-pad">
-         <%= link_to_add_association f, :passengers do %>
-         <%= button_tag(type: "button", class: "btn btn-success") do %>
-          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add <% end %>
-         <% end %>
-         </div>
+        <% if @booking.new_record? %>
+          <div class="div-pad">
+            <%= link_to_add_association f, :passengers do %>
+            <%= button_tag(type: "button", class: "btn btn-success") do %>
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add <% end %>
+            <% end %>
+          </div>
+
           <div class="row div-pad-big"> <%= f.submit "Book", class: "btn btn-primary"%></div>
+        <% else %>
+          <div class="row div-pad-big"> <%= f.submit "Update", class: "btn btn-primary"%></div>
+        <% end %>
       <% end %>
     </div>
   </div>

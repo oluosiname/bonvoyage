@@ -65,6 +65,7 @@ end
 
 group :production do
   gem "pg"
+  gem "puma"
   gem "rails_12factor", "0.0.2"
   gem "activemerchant"
 end

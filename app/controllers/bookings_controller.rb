@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
     @flight = Flight.find_by_id(params[:flight])
     @seats = params[:passengers]
     @booking = Booking.new
-    @user = session[:user_id]
     @seats.to_i.times { @booking.passengers.build }
   end
 
@@ -21,6 +20,22 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @booking = Booking.find_by_id(params[:id])
+    @flight = @booking.flight
+    render "new"
+  end
+
+  def update
+    @booking = Booking.find_by_id(params[:id])
+    @booking.passengers.destroy_all
+    @booking.update(bookings_params)
+    @booking.cost = get_cost(@booking)
+    @booking.save
+    redirect_to bookings_path
+  end
+
+  def result
+    @booking = Booking.find_by_ref(params[:ref])
   end
 
   def destroy
