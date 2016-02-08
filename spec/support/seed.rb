@@ -26,7 +26,7 @@ class Seed
       flight.departure_id = airports.first.id
       flight.arrival_id = airports.last.id
       flight.departure_date = Time.now.advance(
-        days: rand(0..20), hours: rand(1..9), minutes: rand(0..60))
+        days: rand(3..20), hours: rand(1..9), minutes: rand(0..60))
       flight.departure_time = flight.departure_date.strftime("%I:%M %p")
       flight.economy = rand(10..50) * 1000
       flight.business = rand(51..100) * 1000
