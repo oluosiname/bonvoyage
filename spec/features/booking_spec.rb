@@ -2,6 +2,8 @@ require "rails_helper"
 describe "Booking", type: :feature do
   before(:all) do
     User.destroy_all
+    Airport.destroy_all
+    Flight.destroy_all
     @user = create(:user)
   end
 
@@ -15,7 +17,7 @@ describe "Booking", type: :feature do
   end
 
   context "Book Flight" do
-    it "Books a flight " do
+    it "Books a flight and allows user to search for past booking" do
       visit login_path
       within(".signup-container") do
         fill_in "Email", with: @user.email
@@ -32,8 +34,11 @@ describe "Booking", type: :feature do
       within(".dropdown-menu") do
         click_link "Past Bookings"
       end
-      find(:xpath, "/html/body/div[2]/div[2]/div[8]/a").click
-      expect(page).to have_content "Your Booking has Been Deleted"
+      find(:xpath, "/html/body/div[2]/div[2]/div[9]/a").click
+      fill_in "booking_passengers_attributes_0_name", with: "Sname"
+      fill_in "booking_passengers_attributes_0_phone", with: "08087621887"
+      click_button "Update"
+      expect(page).to have_content "Booking Updated Successfully"
     end
   end
 end

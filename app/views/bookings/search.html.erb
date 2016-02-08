@@ -1,6 +1,13 @@
 <%= render partial: 'header' %>
 <div class="container search-input">
   <div class="row">
+  <% unless flash['success'].blank?  %>
+  <div class="alert alert-success success-booking" role="alert">
+    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+    <span class="sr-only">Success:</span>
+    <%= flash['success'] %>
+  </div>
+  <% end %>
   <div class="div-pad"> Search For a Past Booking </div>
     <%= form_tag %>
     <div class="input-group">
