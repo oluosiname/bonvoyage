@@ -6,7 +6,7 @@
     <div class="col-sm-1">
        <p><%= booking.flight.airline %></p>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-2">
      <p><%= booking.flight.departure.name %></p>
      <p><%= booking.flight.departure.location %></p>
     </div>
@@ -26,7 +26,10 @@
     </div>
     <% if available?(booking.flight.departure_date) %>
     <div class="col-sm-1">
-      <%= link_to booking_path(booking.id), method: :delete do %> <p class="large-icon"><span class="glyphicon glyphicon-remove-circle"></span></p> <% end %>
+      <%= link_to booking_path(booking.id), method: :delete do %> <span class="large-icon"><span class="glyphicon glyphicon-remove-circle"></span></span> <% end %>
+    </div>
+    <div class="col-sm-1">
+    <%= link_to edit_booking_path(booking.id) do %> <span class="edit-icon"><span class="glyphicon glyphicon-edit"></span></span> <% end %>
     </div>
     <% end %>
   </div>
