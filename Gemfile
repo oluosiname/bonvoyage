@@ -38,7 +38,7 @@ gem "paypal-express"
 gem "rest-client", "~> 1.8"
 
 # Use Unicorn as the app server
-# gem "unicorn"
+gem "puma"
 
 # Use Capistrano for deployment
 # gem "capistrano-rails", group: :development
@@ -66,7 +66,6 @@ end
 
 group :production do
   gem "pg"
-  gem "puma"
   gem "rails_12factor", "0.0.2"
   gem "activemerchant"
 end
