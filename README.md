@@ -1,5 +1,6 @@
 [![Code Climate](https://codeclimate.com/github/andela-oosiname/bonvoyage/badges/gpa.svg)](https://codeclimate.com/github/andela-oosiname/bonvoyage)
 <a href="https://codeclimate.com/github/andela-oosiname/bonvoyage/coverage"><img src="https://codeclimate.com/github/andela-oosiname/bonvoyage/badges/coverage.svg" /></a>
+[![Build Status](https://travis-ci.org/andela-oosiname/bonvoyage.svg?branch=master)](https://travis-ci.org/andela-oosiname/bonvoyage)
 
 ## Getting Started
 Getting started is extremely easy, you can either clone / fork this repository or download the entire project as a zip package and run locally.
