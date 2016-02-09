@@ -1,8 +1,6 @@
 require "rails_helper"
 
 RSpec.describe BookingsController do
-
-
   let(:flight) { create(:flight) }
   let(:user) { create(:user) }
   context "After successful payment" do
