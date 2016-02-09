@@ -1,11 +1,11 @@
 <%= render partial: 'header' %>
 <div class="container search-input">
   <div class="row">
-  <% unless flash['success'].blank?  %>
-  <div class="alert alert-success success-booking" role="alert">
-    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-    <span class="sr-only">Success:</span>
-    <%= flash['success'] %>
+  <% unless flash['notice'].blank?  %>
+   <div class="alert alert-danger search-error" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    <%= flash['notice'] %>
   </div>
   <% end %>
   <div class="div-pad"> Search For a Past Booking </div>
