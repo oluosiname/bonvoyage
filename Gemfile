@@ -30,7 +30,7 @@ gem "sdoc", "~> 0.4.0", group: :doc
 gem "rspec-rails"
 gem "faker"
 gem "codeclimate-test-reporter", group: :test
-gem 'coveralls', require: false
+gem "coveralls", require: false
 
 gem "bcrypt", "~> 3.1.7"
 gem "paypal-express"

@@ -4,7 +4,8 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-.confirm-head {
+
+.title {
   background-color: #337ab7;
   border-radius: 5px 5px 0 0;
   color: #ffffff;
@@ -13,9 +14,35 @@
   line-height: 2.8em;
   text-align: left;
 }
-.div-pad {
-  padding-bottom: 0.5em;
-  padding-top: 0.5em;
+
+
+.booking-table {
+  border:1px solid #ccc;
+  border-width:1px 2px 2px 1px;
+  font-family: arial,sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  width:35%;
+}
+.body-text {
+  font-family: arial,sans-serif;
+  font-size: 14px;
+}
+
+.title-text {
+  text-align: right;
+}
+
+.bold-text{
+  color: #222;
+  font-size: 12px;
+  font-weight: bold;
+
+}
+.my-row {
+  border-bottom: 1px solid #ccc;
+  padding: 0.5em;
 }
 .mail-table {
   border: 1px solid black;
@@ -27,7 +54,7 @@
 }
 </style>
 </head>
-  <body>
+  <body class="body-text">
     <%= yield %>
   </body>
 </html>
