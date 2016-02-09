@@ -32,11 +32,14 @@ class BookingsController < ApplicationController
     @booking.cost = get_cost(@booking)
     @booking.save
     flash[:success] = "Booking Updated Successfully"
+    BookingMailer.update(@booking, "Booking Updated").deliver_now
     redirect_to bookings_path
   end
 
   def result
     @booking = Booking.find_by_ref(params[:ref])
+    flash[:notice] = "No Booking Found For That Ref"
+    redirect_to :back if @booking.nil?
   end
 
   def destroy
