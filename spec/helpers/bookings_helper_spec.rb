@@ -1,6 +1,5 @@
 require "rails_helper"
 RSpec.describe BookingsHelper, type: :helper do
-
   let(:flight) { create(:flight) }
   let(:booking) { build(:booking) }
   let(:passenger) { build(:passenger) }
