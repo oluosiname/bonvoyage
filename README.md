@@ -1,17 +1,5 @@
-== README
-
 [![Code Climate](https://codeclimate.com/github/andela-oosiname/bonvoyage/badges/gpa.svg)](https://codeclimate.com/github/andela-oosiname/bonvoyage)
 <a href="https://codeclimate.com/github/andela-oosiname/bonvoyage/coverage"><img src="https://codeclimate.com/github/andela-oosiname/bonvoyage/badges/coverage.svg" /></a>
-
-## Dependencies
-To contribute to this work:
-
-1. Fork it ( https://github.com/[andela-oosiname]/bonvoyage )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
-6. Wait
 
 ## Getting Started
 Getting started is extremely easy, you can either clone / fork this repository or download the entire project as a zip package and run locally.
@@ -70,6 +58,16 @@ Mails are also sent to the user for every booking completed. This mail contains 
 ##Limitations
 
 Money paid for a booking cannot be refunded for now, App is still in development phase.
+
 ##Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/andela-oosiname/bonvoyage.
+
+To contribute to this work:
+
+1. Fork it ( https://github.com/[andela-oosiname]/bonvoyage )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
+6. Wait
