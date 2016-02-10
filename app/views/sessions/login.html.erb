@@ -8,7 +8,7 @@
     </div>
   <% unless flash["error"].nil? %>
     <div class ="row my-fields">
-      <%= flash["error"] %>
+      <span class="big-error center"> <%= flash["error"] %></span>
     </div>
     <% end %>
   <%= form_tag %>
@@ -20,7 +20,7 @@
   </div>
   <div class="row my-fields">
     <div class="input-group">
-      <span class="input-group-addon"><i class="fa fa-user"></i></span>
+      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
       <%= password_field_tag :password, "", class: "form-control", id:"signin-password", placeholder: "Password"%>
     </div>
   </div>
