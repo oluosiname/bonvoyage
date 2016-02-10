@@ -10,6 +10,19 @@
   z-index: 2;
 }
 
+.my-footer {
+  background-color: $deep-blue;
+  color: $my-white;
+  font-size: 0.875em;
+  height: 10em;
+  padding-top: 1em;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+}
+
+
 .header-menu {
   font-family: $helvetica;
   font-size: 1em;
@@ -125,11 +138,23 @@
 .box {
   background-color: $my-white;
   border-radius: 4px;
+  min-height: 50em;
   padding: 1em;
   position: relative;
   top: 6em;
   width: 80% !important;
 }
+
+.flight-box {
+  background-color: $my-white;
+  border-radius: 4px;
+  min-height: 100em;
+  padding: 1em;
+  position: relative;
+  top: 6em;
+  width: 80% !important;
+}
+
 
 .header-text {
   color: $my-black;

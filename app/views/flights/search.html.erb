@@ -11,22 +11,8 @@
     <div class="search-head">Search For Flights </div>
        <%= form_tag %>
     <div class="row div-pad-big">
-      <div class="col-sm-6">
-      <div class="div-pad"> Departure </div>
-        <select name="departure_id" class="my-select">
-        <% Airport.all.order("name ASC").each do |airport| %>
-          <option value="<%= airport.id %>"> <%= airport.name << " " << airport.location %> </option>
-        <% end %>
-        </select>
-      </div>
-      <div class="col-sm-6">
-      <div class="div-pad"> Arrival </div>
-        <select name="arrival_id" class="my-select">
-        <% Airport.all.order("name ASC").each do |airport| %>
-          <option value="<%= airport.id %>"> <%= airport.name << " " << airport.location %> </option>
-        <% end %>
-        </select>
-      </div>
+    <%= render partial: 'partials/departure_select' %>
+    <%= render partial: 'partials/arrival_select' %>
     </div>
     <div class="row div-pad-big">
       <div class="col-sm-6">
@@ -52,4 +38,4 @@
   </div>
 </div>
 </div>
-
+<%= render partial: 'footer' %>
