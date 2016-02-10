@@ -21,7 +21,6 @@ RSpec.describe BookingsController do
       booking.destroy
     end
     it "updates booking payment status to true for anonymous user" do
-      user = create(:user)
       booking = create(:booking)
       booking.anon_email = "oluosiname@gmail.com"
       booking.flight = Flight.last
