@@ -8,7 +8,7 @@
     </div>
   <% unless flash["error"].nil? %>
     <div class ="row my-fields">
-      <span class="big-error center"> <%= flash["error"] %></span>
+      <span class="big-error center"> <%= flash.now["error"] %></span>
     </div>
     <% end %>
   <%= form_tag %>
