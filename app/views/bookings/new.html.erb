@@ -13,7 +13,7 @@
         <div class="div-pad"> <%= f.email_field :anon_email, class: "form-control",  placeholder: "Email" %></div>
         <% end %>
         <div class="search-head">Passenger Details</div>
-        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <% if logged_in? %> <%= f.hidden_field :user_id, :value => current_user.id %> <% end %>
         <%= f.hidden_field :flight_id, :value => @flight.id %>
         <%= f.hidden_field :payment_status, :value => false %>
 
