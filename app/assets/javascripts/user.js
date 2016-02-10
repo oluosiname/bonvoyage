@@ -14,5 +14,20 @@ $(document).ready(function() {
       });
     }
   }
+
+  function checkPassword() {
+    if ($("#password").val() !== $("#confirmpassword").val()) {
+      console.log("lkjh");
+      $("#submit-signup").attr("disabled",true)
+      $("#password-error").text("Passwords Do Not Match");
+    }
+    else {
+      $("#submit-signup").attr("disabled",false)
+      $("#password-error").text("");
+    }
+  }
   previousNext();
+  $("#confirmpassword").on("focusout keyup change", checkPassword);
+  $("#password").on("focusout keyup change", checkPassword);
+
 });

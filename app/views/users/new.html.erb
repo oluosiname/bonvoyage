@@ -42,8 +42,9 @@
     <div class="input-group">
       <span class="input-group-addon"><i class="fa fa-lock"></i>
       </span>
-      <%= f.password_field :confirmpassword, class: "form-control", id: "password", placeholder: "Confirm Password" %>
+      <%= f.password_field :confirmpassword, class: "form-control", id: "confirmpassword", placeholder: "Confirm Password" %>
     </div>
+    <span class="big-error" id="password-error"> </span>
   </div>
 
   <div class="row my-fields">
