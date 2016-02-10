@@ -1,0 +1,8 @@
+<div class="col-sm-6">
+  <div class="div-pad"> Arrival </div>
+    <select name="arrival_id" class="my-select">
+    <% @airports.each do |airport| %>
+      <option value="<%= airport.id %>"> <%= airport.name +  " " + airport.location %> </option>
+    <% end %>
+    </select>
+  </div>

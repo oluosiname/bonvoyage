@@ -20,5 +20,6 @@ class FlightsController < ApplicationController
   end
 
   def search
+    @airports = Airport.all.order("name ASC")
   end
 end

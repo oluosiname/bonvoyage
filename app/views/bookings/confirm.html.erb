@@ -1,31 +1,32 @@
 <%= render partial: 'header' %>
-  <div class="container box">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="row">
-          <%= render partial: 'flightinfo' %>
-        </div>
+<div class="container box">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="row">
+        <%= render partial: 'flightinfo' %>
       </div>
-      <div class="col-sm-6">
-        <div class="row confirm-head">
-          <div class="col-sm-4">Name</div>
-          <div class="col-sm-4">Phone</div>
-          <div class="col-sm-2">cabin</div>
-          <div class="col-sm-2">cost</div>
-        </div>
-      <% @passengers.each do |passenger| %>
-        <div class="row passenger-fields">
-          <div class="col-sm-4"><%= passenger.name %></div>
-          <div class="col-sm-4"><%= passenger.phone %></div>
-          <div class="col-sm-2"><%= passenger.cabin %></div>
-          <div class="col-sm-2">&#x20A6;<%= passenger.cost %></div>
-        </div>
-      <% end %>
-      <div class="row div-pad">
-        <div class="col-sm-9">
-          <%= link_to "Confirm", payment_url(@booking), class: "btn btn-success" %>
-        </div>
-          <div class="col-sm-2 pull-right"><span class="header-text">&#x20A6;<%= @booking.cost %></span></div>
-        </div>
     </div>
+    <div class="col-sm-6">
+      <div class="row confirm-head">
+        <div class="col-sm-4">Name</div>
+        <div class="col-sm-4">Phone</div>
+        <div class="col-sm-2">cabin</div>
+        <div class="col-sm-2">cost</div>
+      </div>
+    <% @passengers.each do |passenger| %>
+      <div class="row passenger-fields">
+        <div class="col-sm-4"><%= passenger.name %></div>
+        <div class="col-sm-4"><%= passenger.phone %></div>
+        <div class="col-sm-2"><%= passenger.cabin %></div>
+        <div class="col-sm-2">&#x20A6;<%= passenger.cost %></div>
+      </div>
+    <% end %>
+    <div class="row div-pad">
+      <div class="col-sm-9">
+        <%= link_to "Confirm", payment_url(@booking), class: "btn btn-success" %>
+      </div>
+        <div class="col-sm-2 pull-right"><span class="header-text">&#x20A6;<%= @booking.cost %></span></div>
+      </div>
+  </div>
 </div>
+<%= render partial: 'footer' %>
