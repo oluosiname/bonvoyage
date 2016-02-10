@@ -81,6 +81,7 @@
 .bookings-box {
   border-radius: 4px;
   padding: 1em;
+  min-height: 100em;
   position: relative;
   top: 6em;
   width: 90% !important;
@@ -105,6 +106,7 @@
 .search-input {
   background-color: $my-white;
   padding: 1em;
+  min-height: 50em;
   position: relative;
   text-align: center;
   top: 6em;
