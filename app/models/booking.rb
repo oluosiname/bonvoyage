@@ -7,6 +7,12 @@ class Booking < ActiveRecord::Base
   before_create :set_ref
   before_save :set_seats
 
+  def self.by_user(user_id)
+    where(user_id: user_id)
+  end
+
+  private
+
   def set_ref
     self.ref = (0..9).to_a.sample(8).join
     set_ref if Booking.find_by_ref(ref)
@@ -14,9 +20,5 @@ class Booking < ActiveRecord::Base
 
   def set_seats
     self.seats = passengers.length
-  end
-
-  def self.by_user(user_id)
-    where(user_id: user_id)
   end
 end
