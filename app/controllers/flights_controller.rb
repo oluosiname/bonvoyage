@@ -1,15 +1,16 @@
 class FlightsController < ApplicationController
   def result
     @seats = params[:seats]
-    if params[:date] == ""
+    if params[:date].empty?
       @flights = Flight.by_route(
         params[:departure_id], params[:arrival_id]).available
     else
       @flights = Flight.by_route(
         params[:departure_id], params[:arrival_id]).by_date(params[:date])
     end
+
     flash[:notice] = "No Flights Available For That Search"
-    redirect_to root_path if @flights.length < 1
+    redirect_to root_path if @flights.empty?
   end
 
   def all
