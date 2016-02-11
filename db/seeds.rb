@@ -49,9 +49,7 @@ end
 def set_route(airports_id)
   arrival_id = airports_id.sample
   departure_id = airports_id.sample
-  until departure_id != arrival_id do
-    departure_id = airports_id.sample
-  end
+  departure_id = airports_id.sample until departure_id != arrival_id
   [departure_id, arrival_id]
 end
 
