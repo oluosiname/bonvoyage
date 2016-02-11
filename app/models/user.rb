@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   before_create :format_params
 
+  private
+
   def format_params
     email.downcase!
     username.capitalize!

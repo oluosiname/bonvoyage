@@ -13,7 +13,7 @@ module BookingsHelper
   end
 
   def available?(flight_date)
-    flight_date > Time.now
+    flight_date >= Time.now
   end
 
   def payment_url(booking)
@@ -33,8 +33,11 @@ module BookingsHelper
   end
 
   def convert(naira_cost)
-    response = RestClient.get("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(%22USDNGN%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=
-    ")
+    url = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20"\
+          "yahoo.finance.xchange%20where%20pair%20in%20(%22USDNGN%22)&"\
+          "format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org"\
+          "%2Falltableswithkeys&callback="
+    response = RestClient.get(url)
     result = JSON.parse(response)
     exchange_rate = result["query"]["results"]["rate"]["Rate"]
     (naira_cost / exchange_rate.to_f).round(2)
