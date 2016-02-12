@@ -1,13 +1,57 @@
 @import "application";
 
-.my-header {
-  background-color: $my-white;
-  border-bottom: 3px solid $medium-blue;
-  height: 3.4em;
-  line-height: 3em;
-  position: fixed;
-  width: 100%;
-  z-index: 2;
+.bg-image {
+  background-image: image-url("plane_bg4.png");
+  background-color: $black;
+  color: $black;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  position: relative;
+  top: 6.6em;
+  height: 322px;
+  width: 100% !important;
+}
+
+.search {
+  background-color: $bg-color;
+  height: 205px;
+  padding-top: 1em;
+  padding-left: 3em;
+  position: relative;
+  top: 8em;
+  width: 80%;
+}
+
+.error {
+  color: $google-red;
+}
+
+.orange-button {
+  background-color: $orange;
+  color: $white;
+
+  &:hover {
+    background-color: $white !important;
+    border: 1px solid $orange !important;
+    color: $orange !important;
+  }
+}
+.grey-big {
+  color: $grey;
+  font-family: $h-grey;
+  font-size: 20px;
+}
+
+.my-select {
+  background: $white;
+  border-radius: 0px;
+  color: $my-black;
+  font-size: 0.9em;
+  height: 2.5em;
+}
+
+.main-div {
+  min-height: 50em;
 }
 
 .my-footer {
@@ -20,27 +64,6 @@
   text-align: center;
   width: 100%;
   z-index: 2;
-}
-
-
-.header-menu {
-  font-family: $helvetica;
-  font-size: 1em;
-  font-weight: 400;
-  z-index: 2;
-
-  a {
-    color: $my-black;
-    text-decoration: none !important;
-  }
-}
-
-.list-inline  {
-  color: $my-black;
-  display: inline;
-  padding-left: 1em;
-  padding-right: 2em;
-  text-decoration: none;
 }
 
 .my-container {
@@ -139,10 +162,10 @@
   background-color: $my-white;
   border-radius: 4px;
   min-height: 50em;
-  padding: 1em;
+  padding-top: 1em;
   position: relative;
   top: 6em;
-  width: 80% !important;
+  width: 100% !important;
 }
 
 .flight-box {
@@ -193,17 +216,6 @@
   padding-left: 1.2em;
   text-align: left;
   width: 100%;
-}
-
-.pad {
-  padding-left: 10em;
-
-  li {
-    padding-left: 2em;
-    padding-right: 3em;
-    width: 151em;
-  }
-
 }
 
 

@@ -1,0 +1,71 @@
+@import "application";
+
+.flights {
+  background-color: $bg-color;
+  min-height: 100em;
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-top: 4em;
+  padding-bottom: 2em;
+  position: relative;
+  top: 6em;
+}
+
+.flight-pad {
+  height: 3em;
+  width: 100%;
+}
+
+.flight-list {
+  background-color: $white;
+  font-family: $header-text;
+  height: 14em;
+  padding: 2em;
+  width: 80%;
+}
+
+.flight-airline {
+
+}
+
+.flight-detail {
+  border-left: 1px solid $grey-border;
+  border-right: 1px solid $grey-border;
+  font-family: $header-text;
+  font-size: 12px;
+  height: 12em;
+  padding-left: 1em;
+  padding-right: 1em;
+
+
+
+}
+
+.flight-time {
+  color: $black;
+  font-family: $header-text;
+  font-size: 12px;
+  text-align: center;
+
+  h6 {
+    font-size: 14px;
+    font-variant: 400;
+    text-transform: uppercase;
+  }
+
+  div {
+    padding-bottom: 1em;
+  }
+
+}
+
+.top-down-pad {
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.pg {
+  border: 2px solid $orange;
+  height: 20px;
+  width: 80%;
+}

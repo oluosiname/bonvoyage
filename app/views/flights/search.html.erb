@@ -1,26 +1,30 @@
 <%= render partial: 'header' %>
-<div class="container box">
- <% unless flash['notice'].blank?  %>
-  <div class="alert alert-danger search-error" role="alert">
-    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-    <span class="sr-only">Error:</span>
-    <%= flash.now['notice'] %>
+<div class="main-div">
+  <div class="row bg-image">
   </div>
-  <% end %>
-  <div class="search-div">
-    <div class="search-head">Search For Flights </div>
-       <%= form_tag %>
-    <div class="row div-pad-big">
-    <%= render partial: 'partials/departure_select' %>
-    <%= render partial: 'partials/arrival_select' %>
+  <div class="container search">
+    <div class="row">
+        <div class="col-sm-3"><span class="grey-big">Search For a Flight</span></div>
+        <% unless flash['notice'].blank?  %>
+        <div class="col-sm-9">
+
+          <div class="error">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+          <%= flash.now['notice'] %>
+          </div>
+        </div>
+        <% end %>
     </div>
-    <div class="row div-pad-big">
-      <div class="col-sm-6">
-      <div class="div-pad"> Departure date</div>
+    <div class="row">
+      <%= form_tag %>
+      <%= render partial: 'partials/departure_select' %>
+      <%= render partial: 'partials/arrival_select' %>
+      <div class="col-sm-2">
+        <div class="div-pad"> Departure date</div>
         <input id="departure_date" name="date" type="date" class="date-picker"/>
       </div>
-
-      <div class="col-sm-4">
+      <div class="col-sm-2">
         <div class="div-pad"> Passengers</div>
         <select name="seats" class="my-select">
           <% for i in (1..10) do i %>
@@ -28,14 +32,19 @@
           <% end %>
         </select>
       </div>
-      <div class="col-sm-1">
-      <div class="div-pad"> &nbsp; </div>
-        <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+    </div>
+    <div class="div-pad">
+      &nbsp;
+    </div>
+    <div class="row div-pad">
+       <div class="col-sm-12">
+       <%= button_tag(type: "submit", class: "btn  orange-button") do %>
           <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search<% end %>
-      </div>
+        </div>
     </div>
 
   </div>
 </div>
-</div>
+
+
 <%= render partial: 'footer' %>
