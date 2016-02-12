@@ -25,7 +25,7 @@ describe "Booking", type: :feature do
       end
       click_button "Sign In"
       visit all_flights_path
-      find(:xpath, "/html/body/div[2]/div[2]/div[6]/a").click
+      first(".flight-detail").click_link("BOOK NOW")
       expect(page).to have_content "Passenger Details"
       fill_in "booking_passengers_attributes_0_name", with: "Kpeace"
       fill_in "booking_passengers_attributes_0_phone", with: "08037118709"
@@ -34,7 +34,7 @@ describe "Booking", type: :feature do
       within(".dropdown-menu") do
         click_link "Past Bookings"
       end
-      find(:xpath, "/html/body/div[2]/div[2]/div[9]/a").click
+      find(:xpath, "/html/body/div[3]/div[2]/div[9]/a").click
       fill_in "booking_passengers_attributes_0_name", with: "Sname"
       fill_in "booking_passengers_attributes_0_phone", with: "08087621887"
       click_button "Update"
@@ -49,7 +49,7 @@ describe "Booking", type: :feature do
       end
       click_button "Sign In"
       visit all_flights_path
-      find(:xpath, "/html/body/div[2]/div[2]/div[6]/a").click
+      first(".flight-detail").click_link("BOOK NOW")
       expect(page).to have_content "Passenger Details"
       fill_in "booking_passengers_attributes_0_name", with: "Kpeace"
       fill_in "booking_passengers_attributes_0_phone", with: "08037118709"
@@ -58,7 +58,7 @@ describe "Booking", type: :feature do
       within(".dropdown-menu") do
         click_link "Past Bookings"
       end
-      find(:xpath, "/html/body/div[2]/div[2]/div[9]/a").click
+      find(:xpath, "/html/body/div[3]/div[2]/div[9]/a").click
       fill_in "booking_passengers_attributes_0_name", with: "Sname"
       fill_in "booking_passengers_attributes_0_phone", with: "08087621887"
       click_button "Update"
@@ -73,7 +73,7 @@ describe "Booking", type: :feature do
       end
       click_button "Sign In"
       visit all_flights_path
-      find(:xpath, "/html/body/div[2]/div[2]/div[6]/a").click
+      first(".flight-detail").click_link("BOOK NOW")
       expect(page).to have_content "Passenger Details"
       fill_in "booking_passengers_attributes_0_name", with: "Kpeace"
       fill_in "booking_passengers_attributes_0_phone", with: "08037118709"
@@ -82,7 +82,7 @@ describe "Booking", type: :feature do
       within(".dropdown-menu") do
         click_link "Past Bookings"
       end
-      find(:xpath, "/html/body/div[2]/div[2]/div[8]/a").click
+      find(:xpath, "/html/body/div[3]/div[2]/div[8]/a").click
       expect(page).to have_content "Booking has Been Deleted"
     end
   end
@@ -96,7 +96,7 @@ describe "Booking", type: :feature do
       end
       click_button "Sign In"
       visit all_flights_path
-      find(:xpath, "/html/body/div[2]/div[2]/div[6]/a").click
+      first(".flight-detail").click_link("BOOK NOW")
       expect(page).to have_content "Passenger Details"
       fill_in "booking_passengers_attributes_0_name", with: "Kpeace"
       fill_in "booking_passengers_attributes_0_phone", with: "08037118709"

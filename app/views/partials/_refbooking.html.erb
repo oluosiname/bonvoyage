@@ -1,34 +1,70 @@
-<div class="row my-flight">
-    <div class="col-sm-1">
-       <p><%= @booking.ref %></p>
+
+<div class="flights">
+  <% unless flash['success'].blank?  %>
+<div class="alert alert-success success-booking" role="alert">
+  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+  <span class="sr-only">Success:</span>
+  <%= flash['success'] %>
+</div>
+<% end %>
+    <div class="flight-pad">
+  </div>
+  <div class="row flight-list">
+    <div class="col-sm-2">
+    <div class="flight-airline">
+    <span><%= @booking.flight.airline %></span>
     </div>
-    <div class="col-sm-1">
-       <p><%= @booking.flight.airline %></p>
+    </div>
+    <div class="col-sm-6">
+      <div class="flight-detail">
+        <div class="row">
+          <div class="col-sm-1">
+          <div class="top-down-pad">
+          <i class="fa fa-plane"></i>
+          </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="top-down-pad">  DEPARTURE </div>
+            <div><%= @booking.flight.departure.name %></div>
+            <div class="top-down-pad">
+              <%= link_to booking_path(@booking.id), class: "btn orange-button", method: :delete do %> <span class="large-icon"><i class="glyphicon glyphicon-trash"></i></span>
+              <% end %>
+              <%= link_to edit_booking_path(@booking.id), class: "btn orange-button" do %> <span class="large-icon"><i class="glyphicon glyphicon-edit"></i></span>
+              <% end %>
+            </div>
+
+          </div>
+          <div class="col-sm-1">
+            <div class="top-down-pad">
+            <i class="fa fa-plane arrival"></i>
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <div  class="top-down-pad">  ARRIVAL </div>
+            <div><%= @booking.flight.arrival.name %> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-2">
+      <div class="flight-time">
+      <div class="top-down-pad">  TAKE OFF </div>
+        <div><%= @booking.flight.departure_date %></div>
+        <div><%= @booking.flight.departure_time %></div>
+      </div>
     </div>
     <div class="col-sm-2">
-     <p><%= @booking.flight.departure.name %></p>
-     <p><%= @booking.flight.departure.location %></p>
+      <div class="flight-time">
+      <div class="top-down-pad">  REF: <%= @booking.ref %> </div>
+        <div>COST: &#x20A6;<%= @booking.cost %></div>
+        <div>SEATS: <%= @booking.seats %></div>
+      </div>
     </div>
-    <div class="col-sm-3">
-      <p><%= @booking.flight.arrival.name%></p>
-      <p><%= @booking.flight.arrival.location%></p>
-    </div>
-     <div class="col-sm-1">
-      <p><%= @booking.flight.departure_date%></p>
-      <p><%= @booking.flight.departure_time%></p>
-    </div>
-     <div class="col-sm-1">
-      <p><%= @booking.seats%></p>
-    </div>
-    <div class="col-sm-1">
-      <p><%= @booking.cost%></p>
-    </div>
-  <% if available?(@booking.flight.departure_date) %>
-  <div class="col-sm-1">
-    <%= link_to booking_path(@booking.id), method: :delete do %> <span class="large-icon"><span class="glyphicon glyphicon-remove-circle"></span></span> <% end %>
   </div>
-  <div class="col-sm-1">
-    <%= link_to edit_booking_path(@booking.id) do %> <span class="edit-icon"><span class="glyphicon glyphicon-edit"></span></span> <% end %>
-    </div>
-  <% end %>
+
 </div>
+
+
+
+

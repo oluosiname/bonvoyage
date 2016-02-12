@@ -21,11 +21,14 @@
   font-family: $header-text;
   height: 14em;
   padding: 2em;
-  width: 80%;
+  width: 100%;
 }
 
 .flight-airline {
-
+  padding-top: 4em;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .flight-detail {
@@ -65,7 +68,40 @@
 }
 
 .pg {
-  border: 2px solid $orange;
-  height: 20px;
-  width: 80%;
+
+}
+.pagination {
+
+  a {
+    background-color: $black !important;
+    border: none !important;
+    color: #acacac !important;
+  }
+
+  li.active>a {
+    background: $orange;
+    border: none;
+    border-radius: 2px;
+    color: $white !important;
+  }
+
+  a:hover {
+    background-color: $orange !important;
+    border: none;
+    border-radius: 2px;
+    color: $white !important;
+  }
+}
+
+.arrival {
+  @extend .fa-plane;
+  transform: rotate(0.25turn);
+}
+
+.promo {
+  background-color: $white;
+  height: 30em;
+  padding-top: 2em;
+  padding-left: 3em;
+  width: 100%;
 }

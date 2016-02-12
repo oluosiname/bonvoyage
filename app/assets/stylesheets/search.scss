@@ -2,14 +2,22 @@
 
 .bg-image {
   background-image: image-url("plane_bg4.png");
-  background-color: $black;
-  color: $black;
+  color: $white;
+  font-size: 16px;
+  font-weight: bolder;
+  letter-spacing: 4px;
+  line-height: 322px;
   margin-left: 0px !important;
   margin-right: 0px !important;
   position: relative;
+  text-align: center;
   top: 6.6em;
   height: 322px;
   width: 100% !important;
+}
+
+.orange-text {
+  color: $orange;
 }
 
 .search {
@@ -90,35 +98,6 @@
   font-size: 0.9em !important;
   height: 2.5em !important;
   padding-left: 0.4em !important;
-}
-
-.page-number {
-  display: inline;
-
-  ul li {
-    color: $my-black;
-    display: inline;
-  }
-
-  a {
-    border: 1px solid $my-gray;
-    color: $my-black;
-    display: in-line;
-    padding-left: 0.4em;
-    padding-right: 0.4em;
-    text-decoration: none;
-
-    &:hover {
-      background-color: $my-black;
-      color: $my-white;
-    }
-
-    &:active {
-      background-color: $my-black;
-      color: $my-white;
-    }
-
-  }
 }
 
 .my-flight {

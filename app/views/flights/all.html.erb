@@ -1,29 +1,41 @@
 <%= render partial: 'header' %>
 <div class="main-div">
   <div class="row bg-image">
+   WE FOUND <span class="orange-text"> <%= Flight.available.length %> </span> FLIGHTS FOR YOU
   </div>
   <div class="flights">
+    <div class="row">
+      <h3>FLIGHTS</h3>
+    </div>
   <% @flights.each do |flight| %>
+  <div class="flight-pad">
+    </div>
     <div class="row flight-list">
       <div class="col-sm-4">
-      <span>chjvhkbjl</span>
+      <div class="flight-airline">
+      <span><%= flight.airline %></span>
+      </div>
       </div>
       <div class="col-sm-6">
         <div class="flight-detail">
           <div class="row">
             <div class="col-sm-1">
-
+            <div class="top-down-pad">
+            <i class="fa fa-plane"></i>
+            </div>
             </div>
             <div class="col-sm-5">
               <div class="top-down-pad">  DEPARTURE </div>
               <div><%= flight.departure.name %></div>
-              <div class="top-down-pad">  FROM <%= flight.economy %> / PERSON</div>
+              <div class="top-down-pad">  FROM &#x20A6;<%= flight.economy %> / PERSON</div>
               <div>
               <%= link_to "BOOK NOW", new_booking_path(:flight => flight.id, :passengers => 1), class: "btn orange-button" %>
               </div>
             </div>
             <div class="col-sm-1">
-
+            <div class="top-down-pad">
+            <i class="fa fa-plane arrival"></i>
+            </div>
             </div>
             <div class="col-sm-5">
               <div  class="top-down-pad">  ARRIVAL </div>
@@ -41,14 +53,9 @@
         </div>
       </div>
     </div>
-    <div class="flight-pad">
-    </div>
     <% end %>
     <div class="row pg">
-        ssss
-    </div>
-
-       <%= render partial: 'pagenumber' %>
+          <%= render partial: 'pagenumber' %>
+     </div>
   </div>
 </div>
-<%= render partial: 'footer' %>

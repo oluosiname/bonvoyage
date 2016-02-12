@@ -12,7 +12,7 @@
         <div class="div-pad">You are not signed up, provide an email to receive your boking details</div>
         <div class="div-pad"> <%= f.email_field :anon_email, class: "form-control",  placeholder: "Email", required: "required"%></div>
         <% end %>
-        <div class="search-head">Passenger Details</div>
+        <div><h3>PASSENGER DETAILS</h3></div>
         <% if logged_in? %> <%= f.hidden_field :user_id, :value => current_user.id %> <% end %>
         <%= f.hidden_field :flight_id, :value => @flight.id %>
         <%= f.hidden_field :payment_status, :value => false %>
@@ -28,9 +28,9 @@
             <% end %>
           </div>
 
-          <div class="row div-pad-big"> <%= f.submit "Book", class: "btn btn-primary"%></div>
+          <div class="row div-pad-big"> <%= f.submit "Book", class: "btn orange-button"%></div>
         <% else %>
-          <div class="row div-pad-big"> <%= f.submit "Update", class: "btn btn-primary"%></div>
+          <div class="row div-pad-big"> <%= f.submit "Update", class: "btn orange-button"%></div>
         <% end %>
       <% end %>
     </div>

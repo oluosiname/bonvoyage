@@ -14,13 +14,26 @@
   padding: 1em;
 }
 
+.flight-detailss {
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-top: 2em;
+}
+
+h3 {
+  letter-spacing: 4px;
+}
+
 .flight-details-header {
-  border-bottom: 1px solid $medium-gray;
-  font-family: $section-font;
-  font-weight: bolder;
-  padding: 0.32em 0.35em;
+  background-color: #ff6600;
+  border-radius: 5px;
+  color: $white;
+  font-family: $header-text;
+  font-size: 15px;
+  font-weight: bold;
+  height: 4em;
+  line-height: 4em;
   text-align: center;
-  text-transform: uppercase;
 }
 
 .passenger-fields {
