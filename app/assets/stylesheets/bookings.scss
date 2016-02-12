@@ -94,22 +94,6 @@ h3 {
   width: 90% !important;
 }
 
-.large-icon {
-  span.glyphicon {
-    color: $google-red;
-    font-size: 1.8em;
-  }
-
-}
-
-.edit-icon {
-  span.glyphicon {
-    color: $medium-blue;
-    font-size: 1.8em;
-  }
-
-}
-
 .search-input {
   background-color: $my-white;
   padding: 1em;
@@ -118,4 +102,52 @@ h3 {
   text-align: center;
   top: 6em;
   width: 40% !important;
+}
+
+.thank-you {
+  background-color: $orange;
+  border-radius: 5px;
+  color: $white;
+  padding: 2em;
+  height: 7em;
+  width: 100%;
+}
+
+.big-white-text {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1.4px;
+}
+
+.my-table {
+
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.grey-text {
+  color: $grey;
+  font-weight: bold;
+}
+
+.booking-info {
+  background-color: $orange;
+  border-radius: 5px;
+  color: $white;
+  font-family: $header-text;
+  height: 30em;
+  padding: 28px 34px 31px 34px;
+  text-transform: uppercase;
+  width: 80%;
+
+  p {
+    letter-spacing: 0.5px;
+    color: $pink;
+
+  }
+
+  span {
+    color: $white;
+
+  }
 }
