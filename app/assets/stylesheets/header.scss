@@ -10,8 +10,8 @@
 .top-div {
   background-color: $black;
   color: $white;
-  font-size: 12px;
   font-family: $header-text;
+  font-size: 12px;
   font-weight: 400;
   height: 4em;
   padding-left: 4em;
@@ -23,13 +23,13 @@
     color: $white;
     text-decoration: none !important;
 
-    &:hover{
+    &:hover {
       color: $orange;
     }
   }
 }
 
-.list-inline  {
+.list-inline {
   color: $white;
   display: inline;
   padding-left: 1em;
@@ -52,9 +52,9 @@
 
 .low-div {
   background-color: $white;
-  padding-top: 1em;
   padding-bottom: 0.4em;
   padding-left: 1em;
+  padding-top: 1em;
   position: fixed;
   top: 3.4em;
   width: 100%;
@@ -64,7 +64,7 @@
     color: $light-black;
     text-decoration: none;
 
-    &:hover{
+    &:hover {
       border-bottom: 2px solid $orange;
       color: $orange;
       padding-bottom: 1em;
@@ -73,9 +73,9 @@
   }
 
   li {
-    padding: 2em 2em;
-    font-size: 11px;
     display: inline;
+    font-size: 11px;
+    padding: 2em;
     text-transform: uppercase;
   }
 }

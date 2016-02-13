@@ -3,10 +3,10 @@
 .flights {
   background-color: $bg-color;
   min-height: 100em;
+  padding-bottom: 2em;
   padding-left: 4em;
   padding-right: 4em;
   padding-top: 4em;
-  padding-bottom: 2em;
   position: relative;
   top: 6em;
 }
@@ -25,8 +25,8 @@
 }
 
 .flight-airline {
-  padding-top: 4em;
   letter-spacing: 3px;
+  padding-top: 4em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -67,15 +67,12 @@
   padding-top: 1em;
 }
 
-.pg {
-
-}
 .pagination {
 
   a {
     background-color: $black !important;
     border: none !important;
-    color: #acacac !important;
+    color: $gray !important;
   }
 
   li.active>a {
@@ -101,7 +98,7 @@
 .promo {
   background-color: $white;
   height: 30em;
-  padding-top: 2em;
   padding-left: 3em;
+  padding-top: 2em;
   width: 100%;
 }
