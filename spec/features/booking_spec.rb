@@ -41,29 +41,6 @@ describe "Booking", type: :feature do
       expect(page).to have_content "Booking Updated Successfully"
     end
 
-    # it "Books a flight and allows user to edit for past booking" do
-    #   visit login_path
-    #   within(".signup-container") do
-    #     fill_in "Email", with: @user.email
-    #     fill_in "Password", with: @user.password
-    #   end
-    #   click_button "Sign In"
-    #   visit all_flights_path
-    #   first(".flight-detail").click_link("BOOK NOW")
-    #   fill_in "booking_passengers_attributes_0_name", with: "Kpeace"
-    #   fill_in "booking_passengers_attributes_0_phone", with: "08037118709"
-    #   click_button "Book"
-    #   expect(page).to have_current_path(confirm_bookings_path)
-    #   within(".dropdown-menu") do
-    #     click_link "Past Bookings"
-    #   end
-    #   first(".trash").click
-    #   fill_in "booking_passengers_attributes_0_name", with: "Sname"
-    #   fill_in "booking_passengers_attributes_0_phone", with: "08087621887"
-    #   click_button "Update"
-    #   expect(page).to have_content "Booking Updated Successfully"
-    # end
-
     it "Books a flight and allows user to edit for past booking" do
       visit login_path
       within(".signup-container") do

@@ -26,12 +26,14 @@
           <div class="col-sm-5">
             <div class="top-down-pad">  DEPARTURE </div>
             <div><%= @booking.flight.departure.name %></div>
+            <% if available?(@booking.flight.departure_date) %>
             <div class="top-down-pad">
               <%= link_to booking_path(@booking.id), class: "btn orange-button", method: :delete do %> <span class="large-icon"><i class="glyphicon glyphicon-trash"></i></span>
               <% end %>
               <%= link_to edit_booking_path(@booking.id), class: "btn orange-button" do %> <span class="large-icon"><i class="glyphicon glyphicon-edit"></i></span>
               <% end %>
             </div>
+            <% end %>
 
           </div>
           <div class="col-sm-1">
