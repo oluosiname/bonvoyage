@@ -1,14 +1,11 @@
 class Seed
   def self.airports
     airports = [
-      { name: "N'djili Airport", location: "Kinshasa, Congo" },
-      { name: "Leon M'ba International Airport", location: "Libraville, Gabon"
+      { name: "N'djili Airport", location: "Congo" },
+      { name: "Leon M'ba Airport", location: "Gabon"
         },
-      { name: "Kigali International Airport", location: "Kigali, Rwanda" },
-      { name: "Julius Nyerere International Airport",
-        location: "Dar es Salam, Tanzania" },
-      { name: "Addis Ababa Bole International Airport",
-        location: "Addis Ababa, Ethiopia" }
+      { name: "Kigali Airport", location: "Rwanda" },
+
     ]
     @airlines = ["Dana Air", "Sosoliso", "Bell View", "Kenya Airways",
                  "Arik Air", "Virgin Atlantic", "Sname Air"]
