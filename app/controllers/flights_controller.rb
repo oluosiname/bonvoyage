@@ -10,7 +10,7 @@ class FlightsController < ApplicationController
       @flights = Flight.by_route(
         params[:departure_id],
         params[:arrival_id]).
-        by_date(params[:date])
+                 by_date(params[:date])
     end
 
     if @flights.empty?
@@ -23,8 +23,7 @@ class FlightsController < ApplicationController
     @current_page = params[:page].to_i
 
     @pages = Flight.all.available.length / 10
-    @flights = Flight.offset(10 * (params[:page].to_i - 1)).
-               limit(10).order("departure_date ASC").available
+    @flights = Flight.per_page(params[:page])
   end
 
   def search

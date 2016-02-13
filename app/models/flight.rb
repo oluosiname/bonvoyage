@@ -13,4 +13,9 @@ class Flight < ActiveRecord::Base
   scope :available, -> { where("departure_date >= ?", Time.now) }
 
   scope :by_date, ->(date) { where("departure_date = ?", date) }
+
+  def self.per_page(page)
+    Flight.offset(10 * (page.to_i - 1)).
+      limit(10).order("departure_date ASC").available
+  end
 end

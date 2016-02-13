@@ -4,7 +4,7 @@ class Seed
       { name: "N'djili Airport", location: "Congo" },
       { name: "Leon M'ba Airport", location: "Gabon"
         },
-      { name: "Kigali Airport", location: "Rwanda" },
+      { name: "Kigali Airport", location: "Rwanda" }
 
     ]
     @airlines = ["Dana Air", "Sosoliso", "Bell View", "Kenya Airways",
