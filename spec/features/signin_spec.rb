@@ -9,10 +9,8 @@ describe "the signin process", type: :feature do
   context "Signin with valid credentials" do
     it "signs in valid user" do
       visit login_path
-      within(".signup-container") do
-        fill_in "Email", with: @user.email
-        fill_in "Password", with: @user.password
-      end
+      fill_in "email", with: @user.email
+      fill_in "password", with: @user.password
       click_button "Sign In"
       expect(page).to have_content "Welcome Adebayo"
     end
@@ -21,10 +19,8 @@ describe "the signin process", type: :feature do
   context "Trying to Sign in with invalid credentials " do
     it "doesnt sign in, raises error" do
       visit login_path
-      within(".signup-container") do
-        fill_in "Email", with: "sss@sss.com"
-        fill_in "Password", with: @user.password
-      end
+      fill_in "email", with: "sss@sss.com"
+      fill_in "password", with: @user.password
       click_button "Sign In"
       expect(page).to have_current_path(login_path)
       expect(page).to have_content("Invalid email/password")
@@ -34,9 +30,9 @@ describe "the signin process", type: :feature do
   context "Logout if user is signed out" do
     it "signs in valid user" do
       visit login_path
-      within(".signup-container") do
-        fill_in "Email", with: @user.email
-        fill_in "Password", with: @user.password
+      within(:css, "div.signup-me") do
+        fill_in "email", with: @user.email
+        fill_in "password", with: @user.password
       end
       click_button "Sign In"
       within(".dropdown-menu") do

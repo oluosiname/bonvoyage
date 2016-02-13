@@ -19,9 +19,9 @@ describe "Booking", type: :feature do
   context "Book Flight" do
     it "Books a flight and allows user to edit for past booking" do
       visit login_path
-      within(".signup-container") do
-        fill_in "Email", with: @user.email
-        fill_in "Password", with: @user.password
+      within(".signup-div") do
+        fill_in "email", with: @user.email
+        fill_in "password", with: @user.password
       end
       click_button "Sign In"
       visit all_flights_path
@@ -43,9 +43,9 @@ describe "Booking", type: :feature do
 
     it "Books a flight and allows user to edit for past booking" do
       visit login_path
-      within(".signup-container") do
-        fill_in "Email", with: @user.email
-        fill_in "Password", with: @user.password
+      within(".signup-div") do
+        fill_in "email", with: @user.email
+        fill_in "password", with: @user.password
       end
       click_button "Sign In"
       visit all_flights_path
@@ -67,9 +67,9 @@ describe "Booking", type: :feature do
   context "search for booking, manage bookings" do
     it "Books a flight and allows user to edit for past booking" do
       visit login_path
-      within(".signup-container") do
-        fill_in "Email", with: @user.email
-        fill_in "Password", with: @user.password
+      within(".signup-div") do
+        fill_in "email", with: @user.email
+        fill_in "password", with: @user.password
       end
       click_button "Sign In"
       visit all_flights_path
