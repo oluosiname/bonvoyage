@@ -1,31 +1,61 @@
 <%= render partial: 'header' %>
-  <div class="container flight-box">
-  <%= render partial: 'partials/flighthead' %>
-    <% @flights.each do |flight| %>
-    <div class="row my-flight">
+<div class="main-div">
+  <div class="row bg-image">
+   WE FOUND <span class="orange-text"> <%= Flight.available.length %> </span> FLIGHTS FOR YOU
+  </div>
+  <div class="flights">
+    <div class="row">
+      <h3>FLIGHTS</h3>
+    </div>
+  <% @flights.each do |flight| %>
+  <div class="flight-pad">
+    </div>
+    <div class="row flight-list">
+      <div class="col-sm-4">
+      <div class="flight-airline">
+      <span><%= flight.airline %></span>
+      </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="flight-detail">
+          <div class="row">
+            <div class="col-sm-1">
+            <div class="top-down-pad">
+            <i class="fa fa-plane"></i>
+            </div>
+            </div>
+            <div class="col-sm-5">
+              <div class="top-down-pad">  DEPARTURE </div>
+              <div><%= flight.departure.name %></div>
+              <div class="top-down-pad">  FROM &#x20A6;<%= flight.economy %> / PERSON</div>
+              <div>
+              <%= link_to "BOOK NOW", new_booking_path(:flight => flight.id, :passengers => 1), class: "btn orange-button" %>
+              </div>
+            </div>
+            <div class="col-sm-1">
+            <div class="top-down-pad">
+            <i class="fa fa-plane arrival"></i>
+            </div>
+            </div>
+            <div class="col-sm-5">
+              <div  class="top-down-pad">  ARRIVAL </div>
+              <div><%= flight.arrival.name %> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="col-sm-2">
-         <p><%= flight.airline%></p>
-      </div>
-      <div class="col-sm-3">
-       <p><%= flight.departure.name%></p>
-       <p><%= flight.departure.location%></p>
-      </div>
-      <div class="col-sm-3">
-        <p><%= flight.arrival.name%></p>
-        <p><%= flight.arrival.location%></p>
-      </div>
-       <div class="col-sm-2">
-        <p><%= flight.departure_date%></p>
-        <p><%= flight.departure_time%></p>
-      </div>
-       <div class="col-sm-1">
-        <p><%= flight.duration%>hrs</p>
-      </div>
-      <div class="col-sm-1">
-        <%= link_to new_booking_path(:flight => flight.id, :passengers => 1) do %> <%= image_tag("fly.png") %> <% end %>
+        <div class="flight-time">
+        <div class="top-down-pad">  TAKE OFF </div>
+          <div><%= flight.departure_date %></div>
+          <div><%= flight.departure_time %></div>
+        </div>
       </div>
     </div>
     <% end %>
-    <%= render partial: 'pagenumber' %>
+    <div class="row pg">
+          <%= render partial: 'pagenumber' %>
+     </div>
   </div>
-<%= render partial: 'footer' %>
+</div>

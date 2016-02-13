@@ -14,13 +14,26 @@
   padding: 1em;
 }
 
+.flight-detailss {
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-top: 2em;
+}
+
+h3 {
+  letter-spacing: 4px;
+}
+
 .flight-details-header {
-  border-bottom: 1px solid $medium-gray;
-  font-family: $section-font;
-  font-weight: bolder;
-  padding: 0.32em 0.35em;
+  background-color: #ff6600;
+  border-radius: 5px;
+  color: $white;
+  font-family: $header-text;
+  font-size: 15px;
+  font-weight: bold;
+  height: 4em;
+  line-height: 4em;
   text-align: center;
-  text-transform: uppercase;
 }
 
 .passenger-fields {
@@ -49,66 +62,69 @@
   text-align: left;
 }
 
-.my-select {
-  background: transparent;
-  color: $my-black;
-  font-size: 0.9em;
-  height: 2.5em;
-}
-
-.success-booking {
-
-  text-align: center;
-  text-transform: uppercase;
-  width: 40%;
-}
-
-.success-box {
-  border-radius: 4px;
-  padding: 1em;
-  position: relative;
-  top: 6em;
-  width: 60% !important;
-}
-
-.success-container {
-  border: 0.063em solid $light-blue-border;
-  border-radius: 0.303em;
-  padding: 0;
-  position: relative;
-}
-
 .bookings-box {
   border-radius: 4px;
-  padding: 1em;
   min-height: 100em;
+  padding: 1em;
   position: relative;
   top: 6em;
   width: 90% !important;
 }
 
-.large-icon {
-  span.glyphicon {
-    color: $google-red;
-    font-size: 1.8em;
-  }
-
-}
-
-.edit-icon {
-  span.glyphicon {
-    color: $medium-blue;
-    font-size: 1.8em;
-  }
-
-}
-
 .search-input {
   background-color: $my-white;
-  padding: 1em;
   min-height: 50em;
+  padding: 1em;
   position: relative;
   text-align: center;
   top: 6em;
   width: 40% !important;
+}
+
+.thank-you {
+  background-color: $orange;
+  border-radius: 5px;
+  color: $white;
+  height: 7em;
+  padding: 2em;
+  width: 100%;
+}
+
+.big-white-text {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1.4px;
+}
+
+.my-table {
+
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.grey-text {
+  color: $grey;
+  font-weight: bold;
+}
+
+.booking-info {
+  background-color: $orange;
+  border-radius: 5px;
+  color: $white;
+  font-family: $header-text;
+  height: 30em;
+  padding: 28px 34px 31px;
+  text-transform: uppercase;
+  width: 80%;
+
+  p {
+    color: $pink;
+    letter-spacing: 0.5px;
+
+  }
+
+  span {
+    color: $white;
+
+  }
 }

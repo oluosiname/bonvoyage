@@ -1,34 +1,42 @@
 <%= render partial: 'header' %>
-<div class="container signup-container">
-  <div class="signup-header">
-    Sign In
-    </div>
+<div class="signup-div container">
+  <h4> Sign in to your account </h4>
+  <div class="signup-me">
+
     <div class="row user-icon">
       <%= image_tag("user.png") %>
     </div>
-  <% unless flash["error"].nil? %>
+
+
+    <%= form_tag %>
+    <div class="row my-fields">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <%= email_field_tag :email, "", class: "form-control", placeholder: "Enter your email" %>
+      </div>
+    </div>
+
+    <div class="row my-fields">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <%= password_field_tag :password, "", class: "form-control", id:"signin-password", placeholder: "Password"%>
+      </div>
+    </div>
+
+    <% unless flash["error"].nil? %>
     <div class ="row my-fields">
       <span class="big-error center"> <%= flash.now["error"] %></span>
     </div>
     <% end %>
-  <%= form_tag %>
-  <div class="row my-fields">
-    <div class="input-group">
-      <span class="input-group-addon"><i class="fa fa-user"></i></span>
-      <%= email_field_tag :email, "", class: "form-control", placeholder: "Email"%>
-    </div>
-  </div>
-  <div class="row my-fields">
-    <div class="input-group">
-      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-      <%= password_field_tag :password, "", class: "form-control", id:"signin-password", placeholder: "Password"%>
-    </div>
-  </div>
 
-  <div class="row my-fields">
-   <%= submit_tag "Sign In", class: "btn btn-success" %>
-  </div>
-  <div class="row signup-down">
-    <span class="label-font"> Haven't got an account? <%= link_to "Sign Up", new_user_path %> </span>
+    <div class="row my-fields">
+      <%= submit_tag "Sign In", class: "btn login-button" %>
+    </div>
+
+
+    <div class="row my-fields">
+      <span class="label-font"> Haven't got an account? <%= link_to "Sign Up", new_user_path %> </span>
+    </div>
+
   </div>
 </div>

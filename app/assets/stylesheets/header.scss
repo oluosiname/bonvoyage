@@ -1,0 +1,81 @@
+@import "application";
+
+.my-header {
+  line-height: 3em;
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+}
+
+.top-div {
+  background-color: $black;
+  color: $white;
+  font-family: $header-text;
+  font-size: 12px;
+  font-weight: 400;
+  height: 4em;
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-top: 0.5em;
+  width: 100%;
+
+  a {
+    color: $white;
+    text-decoration: none !important;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+}
+
+.list-inline {
+  color: $white;
+  display: inline;
+  padding-left: 1em;
+  padding-right: 2em;
+  text-decoration: none;
+}
+
+.pad {
+  background-color: $black !important;
+
+  li {
+    background-color: $black;
+    font-size: 12px;
+    padding-left: 2em;
+    padding-right: 3em;
+    width: 15em;
+  }
+
+}
+
+.low-div {
+  background-color: $white;
+  padding-bottom: 0.4em;
+  padding-left: 1em;
+  padding-top: 1em;
+  position: fixed;
+  top: 3.4em;
+  width: 100%;
+  z-index: 2;
+
+  a {
+    color: $light-black;
+    text-decoration: none;
+
+    &:hover {
+      border-bottom: 2px solid $orange;
+      color: $orange;
+      padding-bottom: 1em;
+      text-decoration: none;
+    }
+  }
+
+  li {
+    display: inline;
+    font-size: 11px;
+    padding: 2em;
+    text-transform: uppercase;
+  }
+}

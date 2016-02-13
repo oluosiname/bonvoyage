@@ -1,13 +1,8 @@
 <%= render partial: 'header' %>
-  <div class="container bookings-box">
-  <% unless flash['success'].blank?  %>
-  <div class="alert alert-success success-booking" role="alert">
-    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-    <span class="sr-only">Success:</span>
-    <%= flash['success'] %>
+<div class="main-div">
+  <div class="row bg-image">
+   YOU HAVE <span class="orange-text"> <%= @bookings.length %> </span> BOOKINGS
   </div>
-  <% end %>
-    <%= render partial: 'partials/bookinghead' %>
-    <%= render partial: 'partials/userbookings' %>
-  </div>
+   <%= render partial: 'partials/userbookings' %>
+</div>
 <%= render partial: 'footer' %>

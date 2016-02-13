@@ -9,12 +9,12 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "variables";
 
 $helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $head-text:  Raleway, sans-serif;
 $open-sans: "Open Sans", sans-serif;
-$deep-blue: #337ab7;
-$light-blue: #d9edf7;
+
 $light-blue-border: #bce8f1;
 $medium-blue: #4b8bac;
 $medium-green: #47c9af;
@@ -27,7 +27,6 @@ $my-green: #338574;
 $my-white: #ffffff;
 $my-orange: #ffcb00;
 $my-black: #160f09;
-$grey-border: #efefef;
 $bottom-border: #e8e8e8;
 $section-color: #333;
 $section-text-size: 400;

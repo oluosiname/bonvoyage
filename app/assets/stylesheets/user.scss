@@ -1,22 +1,41 @@
 @import "application";
 
-.signup-header {
-  background-color: $medium-blue;
-  border-bottom: 0.063em solid $light-blue-border;
-  border-radius: 2px 2px 0 0;
-  color: $my-white;
-  height: 2.6em;
-  padding-left: 1.4em;
-  padding-top: 0.4em;
+.signup-div {
+  height: 30em;
+  position: relative;
+  text-align: center !important;
+  top: 8em;
+  width: 50% !important;
+}
+
+.signup-me {
+  background-color: $bg-color;
+  border-radius: 2px;
+  margin: 0 auto;
+  text-align: center;
+  width: 25em;
+
 }
 
 .my-fields {
   color: $my-black !important;
-  height: 4.4em !important;
-  left: 2.6em;
+  height: 4em !important;
+  margin: 0 auto !important;
   position: relative;
-  top: 1em;
-  width: 28em;
+  text-align: center !important;
+  width: 20em;
+}
+
+.login-button {
+  background-color: $orange;
+  color: $white;
+  width: 100%;
+
+  &:hover {
+    background-color: $white !important;
+    border: 1px solid $orange !important;
+    color: $orange !important;
+  }
 }
 
 .label-font {
@@ -30,36 +49,11 @@
   }
 }
 
-.signup-down {
-  border-top: 1px solid $my-black;
-  color: $my-black !important;
-  height: 5em !important;
-  left: 1.5em;
-  padding-left: 0.4em;
-  padding-top: 1em;
-  position: relative;
-  width: 28em;
-}
-
 .big-error {
   color: $google-red;
   font-size: 1em;
 }
 
-.small-error {
-  @extend .pull-right;
-  color: $google-red;
-  font-size: 0.8em;
-}
-
-.signup-container {
-  border: 0.063em solid $light-blue-border;
-  border-radius: 0.303em;
-  padding: 0 !important;
-  position: relative;
-  top: 8em;
-  width: 34% !important;
-}
 
 .header {
   font-size: 1.4em;

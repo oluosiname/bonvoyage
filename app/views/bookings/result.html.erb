@@ -1,6 +1,8 @@
 <%= render partial: 'header' %>
-  <div class="container bookings-box">
-    <%= render partial: 'partials/bookinghead' %>
-    <%= render partial: 'partials/refbooking' %>
+<div class="main-div">
+  <div class="row bg-image">
+   WE FOUND YOUR BOOKING WITH REF <span class="orange-text"> <%= @booking.ref %> </span>
   </div>
+    <%= render partial: 'partials/refbooking' %>
+</div>
 <%= render partial: 'footer' %>

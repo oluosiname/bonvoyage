@@ -9,7 +9,7 @@ RSpec.describe "Signup", type: :feature do
     context "While on sign in page" do
       scenario "page has content 'Sign Up' " do
         visit login_path
-        within(:css, "div.signup-down") do
+        within(:css, "div.signup-me") do
           click_link "Sign Up"
         end
         expect(page).to have_current_path(new_user_path)
