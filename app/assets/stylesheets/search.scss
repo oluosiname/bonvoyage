@@ -5,14 +5,14 @@
   color: $white;
   font-size: 16px;
   font-weight: bolder;
+  height: 322px;
   letter-spacing: 4px;
   line-height: 322px;
-  margin-left: 0px !important;
-  margin-right: 0px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   position: relative;
   text-align: center;
   top: 6.6em;
-  height: 322px;
   width: 100% !important;
 }
 
@@ -23,8 +23,8 @@
 .search {
   background-color: $bg-color;
   height: 205px;
-  padding-top: 1em;
   padding-left: 3em;
+  padding-top: 1em;
   position: relative;
   top: 8em;
   width: 80%;
@@ -44,6 +44,7 @@
     color: $orange !important;
   }
 }
+
 .grey-big {
   color: $grey;
   font-family: $h-grey;
@@ -52,14 +53,10 @@
 
 .my-select {
   background: $white;
-  border-radius: 0px;
+  border-radius: 0;
   color: $my-black;
   font-size: 0.9em;
   height: 2.5em;
-}
-
-.main-div {
-
 }
 
 .my-footer {
@@ -171,8 +168,8 @@
 }
 
 .search-error {
-  vertical-align: center;
   text-align: center;
+  vertical-align: center;
   width: 85%;
 }
 

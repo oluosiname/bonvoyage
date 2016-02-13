@@ -62,33 +62,10 @@ h3 {
   text-align: left;
 }
 
-
-.success-booking {
-
-  text-align: center;
-  text-transform: uppercase;
-  width: 40%;
-}
-
-.success-box {
-  border-radius: 4px;
-  padding: 1em;
-  position: relative;
-  top: 6em;
-  width: 60% !important;
-}
-
-.success-container {
-  border: 0.063em solid $light-blue-border;
-  border-radius: 0.303em;
-  padding: 0;
-  position: relative;
-}
-
 .bookings-box {
   border-radius: 4px;
-  padding: 1em;
   min-height: 100em;
+  padding: 1em;
   position: relative;
   top: 6em;
   width: 90% !important;
@@ -96,8 +73,8 @@ h3 {
 
 .search-input {
   background-color: $my-white;
-  padding: 1em;
   min-height: 50em;
+  padding: 1em;
   position: relative;
   text-align: center;
   top: 6em;
@@ -108,8 +85,8 @@ h3 {
   background-color: $orange;
   border-radius: 5px;
   color: $white;
-  padding: 2em;
   height: 7em;
+  padding: 2em;
   width: 100%;
 }
 
@@ -136,13 +113,13 @@ h3 {
   color: $white;
   font-family: $header-text;
   height: 30em;
-  padding: 28px 34px 31px 34px;
+  padding: 28px 34px 31px;
   text-transform: uppercase;
   width: 80%;
 
   p {
-    letter-spacing: 0.5px;
     color: $pink;
+    letter-spacing: 0.5px;
 
   }
 

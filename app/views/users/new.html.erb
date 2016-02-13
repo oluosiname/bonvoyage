@@ -1,57 +1,61 @@
 <%= render partial: 'header' %>
+<div class="signup-div container">
+  <h4> Sign Up </h4>
+  <div class="signup-me">
 
-<div class="container signup-container">
-  <div class="signup-header">
-    Sign Up
-  </div>
-  <div class="row user-icon">
+    <div class="row user-icon">
       <%= image_tag("user.png") %>
     </div>
-  <% unless flash["errors"].nil? %>
+
+   <% unless flash["errors"].nil? %>
     <div class ="row my-fields">
       <% flash["errors"].each do |error| %>
         <span class="big-error center"> <%= error %></span>
       <% end %>
     </div>
   <% end %>
-  <%= form_for (@user) do |f| %>
-  <div class="row my-fields">
-    <div class="input-group">
-      <span class="input-group-addon"><i class="fa fa-user"></i></span>
-      <%= f.text_field :username, class: "form-control",  placeholder: "Username", required: "required" %>
-    </div>
-  </div>
 
-  <div class="row my-fields">
-    <div class="input-group">
-      <span class="input-group-addon"><i class="fa fa-envelope"></i>
-      </span>
-      <%= f.text_field :email, class: "form-control",  placeholder: "Email", required: "required" %>
+    <%= form_for (@user) do |f| %>
+    <div class="row my-fields">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <%= f.text_field :username, class: "form-control",  placeholder: "Username", required: "required" %>
+      </div>
     </div>
-  </div>
 
-  <div class="row my-fields">
-    <div class="input-group">
-      <span class="input-group-addon"><i class="fa fa-lock"></i>
-      </span>
-      <%= f.password_field :password, class: "form-control", id: "password", placeholder: "Password", required: "required" %>
+    <div class="row my-fields">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-envelope"></i>
+        </span>
+        <%= f.text_field :email, class: "form-control",  placeholder: "Email", required: "required" %>
+      </div>
     </div>
-  </div>
 
-  <div class="row my-fields">
-    <div class="input-group">
-      <span class="input-group-addon"><i class="fa fa-lock"></i>
-      </span>
-      <%= f.password_field :confirmpassword, class: "form-control", id: "confirmpassword", placeholder: "Confirm Password" %>
+    <div class="row my-fields">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-lock"></i>
+        </span>
+        <%= f.password_field :password, class: "form-control", id: "password", placeholder: "Password", required: "required" %>
+      </div>
     </div>
-    <span class="big-error" id="password-error"> </span>
-  </div>
 
-  <div class="row my-fields">
-    <%= f.submit "Sign Up", class: "btn btn-success", id: "submit-signup" %>
+    <div class="row my-fields">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <%= f.password_field :confirmpassword, class: "form-control", id: "confirmpassword", placeholder: "Confirm Password" %>
+      </div>
+      <span class="big-error" id="password-error"> </span>
+    </div>
+
+    <div class="row my-fields">
+      <%= f.submit "Sign Up", class: "btn login-button", id: "submit-signup" %>
+    </div>
+
+    <% end %>
+
+    <div class="row my-fields">
+      <span class="label-font"> Already got an account? <%= link_to "Sign In", login_path %> </span>
+    </div>
+
   </div>
-  <div class="row signup-down">
-    <span class="label-font"> Already got an account? <%= link_to "Sign In", login_path %> </span>
-  </div>
-  <% end %>
 </div>
