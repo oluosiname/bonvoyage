@@ -16,20 +16,24 @@ describe "Booking", type: :feature do
     Seed.flights
   end
 
+  def book_flight
+    visit login_path
+    within(".signup-div") do
+      fill_in "email", with: @user.email
+      fill_in "password", with: @user.password
+    end
+    click_button "Sign In"
+    visit all_flights_path
+    first(".flight-detail").click_link("BOOK NOW")
+    expect(page).to have_content "PASSENGER DETAILS"
+    fill_in "booking_passengers_attributes_0_name", with: "Kpeace"
+    fill_in "booking_passengers_attributes_0_phone", with: "08037118709"
+    click_button "Book"
+  end
+
   context "Book Flight" do
     it "Books a flight and allows user to edit for past booking" do
-      visit login_path
-      within(".signup-div") do
-        fill_in "email", with: @user.email
-        fill_in "password", with: @user.password
-      end
-      click_button "Sign In"
-      visit all_flights_path
-      first(".flight-detail").click_link("BOOK NOW")
-      expect(page).to have_content "PASSENGER DETAILS"
-      fill_in "booking_passengers_attributes_0_name", with: "Kpeace"
-      fill_in "booking_passengers_attributes_0_phone", with: "08037118709"
-      click_button "Book"
+      book_flight
       expect(page).to have_current_path(confirm_bookings_path)
       within(".dropdown-menu") do
         click_link "Past Bookings"
@@ -38,45 +42,25 @@ describe "Booking", type: :feature do
       fill_in "booking_passengers_attributes_0_name", with: "Sname"
       fill_in "booking_passengers_attributes_0_phone", with: "08087621887"
       click_button "Update"
+
       expect(page).to have_content "Booking Updated Successfully"
     end
 
     it "Books a flight and allows user to edit for past booking" do
-      visit login_path
-      within(".signup-div") do
-        fill_in "email", with: @user.email
-        fill_in "password", with: @user.password
-      end
-      click_button "Sign In"
-      visit all_flights_path
-      first(".flight-detail").click_link("BOOK NOW")
-      expect(page).to have_content "PASSENGER DETAILS"
-      fill_in "booking_passengers_attributes_0_name", with: "Kpeace"
-      fill_in "booking_passengers_attributes_0_phone", with: "08037118709"
-      click_button "Book"
+      book_flight
       expect(page).to have_current_path(confirm_bookings_path)
       within(".dropdown-menu") do
         click_link "Past Bookings"
       end
-
       first(".trash").click
+
       expect(page).to have_content "Booking has Been Deleted"
     end
   end
 
   context "search for booking, manage bookings" do
     it "Books a flight and allows user to edit for past booking" do
-      visit login_path
-      within(".signup-div") do
-        fill_in "email", with: @user.email
-        fill_in "password", with: @user.password
-      end
-      click_button "Sign In"
-      visit all_flights_path
-      first(".flight-detail").click_link("BOOK NOW")
-      fill_in "booking_passengers_attributes_0_name", with: "Kpeace"
-      fill_in "booking_passengers_attributes_0_phone", with: "08037118709"
-      click_button "Book"
+      book_flight
       expect(page).to have_current_path(confirm_bookings_path)
       within(".dropdown-menu") do
         click_link "Manage Bookings"
@@ -86,6 +70,7 @@ describe "Booking", type: :feature do
       within(".input-group") do
         click_button "Search"
       end
+
       expect(page).to have_current_path(search_bookings_path)
       expect(page).to have_content booking.ref
     end

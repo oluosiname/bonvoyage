@@ -26,6 +26,7 @@ RSpec.describe "Signup", type: :feature do
       fill_in "Password", with: "password"
       fill_in "user[confirmpassword]", with: "password"
       click_button "Sign Up"
+
       expect(page).to have_content "Welcome Kpeace"
     end
 
@@ -37,6 +38,7 @@ RSpec.describe "Signup", type: :feature do
       fill_in "Password", with: "password"
       fill_in "user[confirmpassword]", with: "password"
       click_button "Sign Up"
+
       expect(page).to have_content "Email has already been taken"
     end
   end
