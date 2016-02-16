@@ -31,6 +31,10 @@ class BookingsController < ApplicationController
     @booking.update(bookings_params)
     @booking.cost = get_cost(@booking)
     @booking.save
+    successful_update
+  end
+
+  def successful_update
     flash[:success] = "Booking Updated Successfully"
     BookingMailer.update(@booking, "Booking Updated").deliver_now
     redirect_to bookings_path
