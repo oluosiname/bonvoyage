@@ -22,6 +22,7 @@ describe "the signin process", type: :feature do
       fill_in "email", with: "sss@sss.com"
       fill_in "password", with: @user.password
       click_button "Sign In"
+
       expect(page).to have_current_path(login_path)
       expect(page).to have_content("Invalid email/password")
     end

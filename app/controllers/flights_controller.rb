@@ -9,8 +9,8 @@ class FlightsController < ApplicationController
     else
       @flights = Flight.by_route(
         params[:departure_id],
-        params[:arrival_id]).
-                 by_date(params[:date])
+        params[:arrival_id]
+      ).by_date(params[:date])
     end
 
     if @flights.empty?

@@ -8,6 +8,7 @@ RSpec.describe BookingsController do
     Seed.airports
     Seed.flights
   end
+
   context "After successful payment" do
     it "updates booking payment status to true for signed-in user" do
       user = create(:user)
@@ -20,6 +21,7 @@ RSpec.describe BookingsController do
       expect(booking.payment_status).to be true
       booking.destroy
     end
+
     it "updates booking payment status to true for anonymous user" do
       booking = create(:booking)
       booking.anon_email = "oluosiname@gmail.com"

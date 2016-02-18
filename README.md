@@ -5,6 +5,19 @@
 ## Getting Started
 Getting started is extremely easy, you can either clone / fork this repository or download the entire project as a zip package and run locally.
 
+##Features
+This app enebles you to search for available flights and book the flight that you want. You can search for flights using departure location and destination (with or without date). You can also specify the number of passengers you are booking for.
+
+You can also select the cabin you want to book for the passenger(s). i.e. First Class, Business class, Economy class.
+
+You pay for your booking via paypal.
+
+You can also manage your bookings, Change the names, phone numbers of passengers of a particular booking.
+
+You can also cancel a booking if the flight has not departed.
+
+Mails are also sent to the user for every booking completed. This mail contains the booking information, including the booking ref number with which a flight can be searched.
+
 ## Dependencies
 This project is implemented using the rails framework. To run this app on your local machine after forking or downloading, you need to have a version of Rails running on your local development machine. You also need to make sure that you have the Ruby programming language installed as rails is written in ruby.
 
@@ -41,20 +54,6 @@ in the project folder
 
 For more specific tests, specify the absolute path to the spec file.
 e.g. `bundle exec rspec spec/models/booking_spec.rb`
-
-##Features
-
-This app enebles you to search for available flights and book the flight that you want. You can search for flights using departure location and destination (with or without date). You can also specify the number of passengers you are booking for.
-
-You can also select the cabin you want to book for the passenger(s). i.e. First Class, Business class, Economy class.
-
-You pay for your booking via paypal.
-
-You can also manage your bookings, Change the names, phone numbers of passengers of a particular booking.
-
-You can also cancel a booking if the flight has not departed.
-
-Mails are also sent to the user for every booking completed. This mail contains the booking information, including the booking ref number with which a flight can be searched.
 
 ##Limitations
 
