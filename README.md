@@ -6,7 +6,7 @@
 Getting started is extremely easy, you can either clone / fork this repository or download the entire project as a zip package and run locally.
 
 ##Features
-This app enebles you to search for available flights and book the flight that you want. You can search for flights using departure location and destination (with or without date). You can also specify the number of passengers you are booking for.
+This app enables you to search for available flights and book the flight that you want. You can search for flights using departure location and destination (with or without date). You can also specify the number of passengers you are booking for.
 
 You can also select the cabin you want to book for the passenger(s). i.e. First Class, Business class, Economy class.
 
