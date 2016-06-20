@@ -1,4 +1,4 @@
-arequire "faker"
+require "faker"
 
 Airport.destroy_all
 Flight.destroy_all
